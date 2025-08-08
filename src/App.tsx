@@ -1,16 +1,41 @@
 import "./index.css";
-import { BrasaTabs, Card, CardContent, CardDescription, CardHeader, CardTitle, Badge, Button } from "./components";
-import { Cpu, Gauge, Layers, Database, Merge, Rocket, Puzzle, Bot, SquareTerminal, Monitor, Globe, Terminal as TerminalIcon, Code2, Plug, Wand2 } from "lucide-react";
 import {
+	Bot,
+	Code2,
+	Cpu,
+	Database,
+	Gauge,
+	Globe,
+	Layers,
+	Merge,
+	Monitor,
+	Plug,
+	Puzzle,
+	Rocket,
+	SquareTerminal,
+	Terminal as TerminalIcon,
+	Wand2,
+} from "lucide-react";
+import {
+	Bar,
+	BarChart,
+	CartesianGrid,
+	Cell,
+	ResponsiveContainer,
+	Tooltip,
 	XAxis,
 	YAxis,
-	CartesianGrid,
-	Tooltip,
-	ResponsiveContainer,
-	BarChart,
-	Bar,
-	Cell,
 } from "recharts";
+import {
+	Badge,
+	BrasaTabs,
+	Button,
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "./components";
 
 function App() {
 	// Dados dos benchmarks (Documento Técnico)
@@ -84,7 +109,8 @@ function App() {
 		other: "#94a3b8", // slate-400 fallback
 	};
 
-	const brandColor = (modelo: string) => brandColors[getBrand(modelo)] ?? brandColors.other;
+	const brandColor = (modelo: string) =>
+		brandColors[getBrand(modelo)] ?? brandColors.other;
 
 	return (
 		<div className="min-h-dvh bg-(--panel-bg) text-neutral-100">
@@ -107,10 +133,16 @@ function App() {
 						<a href="#modelos" className="hover:text-white transition-colors">
 							Modelos
 						</a>
-						<a href="#benchmarks" className="hover:text-white transition-colors">
+						<a
+							href="#benchmarks"
+							className="hover:text-white transition-colors"
+						>
 							Benchmarks
 						</a>
-						<a href="#metodologia" className="hover:text-white transition-colors">
+						<a
+							href="#metodologia"
+							className="hover:text-white transition-colors"
+						>
 							Pesquisa
 						</a>
 					</nav>
@@ -148,10 +180,10 @@ function App() {
 								<Button asChild color="emerald" size="md" variant="solid">
 									<a href="#produtos">Comece agora</a>
 								</Button>
-								<Button asChild color="yellow" size="md" variant="outline">
+								<Button asChild color="yellow" size="md" variant="tinted">
 									<a href="#empresas">Soluções para Empresas</a>
 								</Button>
-								<Button asChild color="blue" size="md" variant="outline">
+								<Button asChild color="blue" size="md" variant="tinted">
 									<a href="#benchmarks">Ver Benchmarks</a>
 								</Button>
 							</div>
@@ -175,9 +207,11 @@ function App() {
 				</div>
 			</section>
 
-
 			{/* Produtos */}
-			<section id="produtos" className="border-t border-(--border) bg-(--panel-muted-bg)">
+			<section
+				id="produtos"
+				className="border-t border-(--border) bg-(--panel-muted-bg)"
+			>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
 					<div className="flex items-end justify-between gap-4">
 						<div>
@@ -205,7 +239,9 @@ function App() {
 										Brasa Chat
 									</CardTitle>
 									<CardDescription>
-										Chatbot agentico por padrão, com browser virtual, API de web scraping/crawl, terminal, REPL e acesso a ferramentas MCP (Model Context Protocol).
+										Chatbot agentico por padrão, com browser virtual, API de web
+										scraping/crawl, terminal, REPL e acesso a ferramentas MCP
+										(Model Context Protocol).
 									</CardDescription>
 								</div>
 								<Badge color="emerald">Web</Badge>
@@ -248,7 +284,9 @@ function App() {
 										Brasa CLI
 									</CardTitle>
 									<CardDescription>
-										Ferramenta de CLI agentica para criação de código, com suporte a MCP, REPL, terminal, API de web scraping/crawl e integração com LSP (Language Server Protocol).
+										Ferramenta de CLI agentica para criação de código, com
+										suporte a MCP, REPL, terminal, API de web scraping/crawl e
+										integração com LSP (Language Server Protocol).
 									</CardDescription>
 								</div>
 								<Badge color="blue">CLI</Badge>
@@ -282,29 +320,61 @@ function App() {
 				</div>
 			</section>
 			{/* Modelos */}
-			<section id="modelos" className="border-t border-(--border) bg-(--panel-bg)">
+			<section
+				id="modelos"
+				className="border-t border-(--border) bg-(--panel-bg)"
+			>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
 					<div className="flex items-end justify-between gap-4">
 						<div>
-							<h2 className="text-2xl md:text-3xl font-bold tracking-tight">Modelos</h2>
+							<h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+								Modelos
+							</h2>
 							<p className="mt-2 text-neutral-300 max-w-3xl">
-								Famílias de modelos otimizados para agentes, raciocínio e tool-use. Suporte a quantizações e execução eficiente em múltiplos hardwares (CPU, GPU, Mobile e Edge).
+								Famílias de modelos otimizados para agentes, raciocínio e
+								tool-use. Suporte a quantizações e execução eficiente em
+								múltiplos hardwares (CPU, GPU, Mobile e Edge).
 							</p>
 						</div>
 						<div className="hidden md:flex items-center gap-2 text-xs">
-							<span className="rounded border border-emerald-400/30 bg-emerald-400/10 px-2 py-1 text-emerald-200 transition-colors hover:bg-emerald-400/15">Agentic</span>
-							<span className="rounded border border-blue-400/30 bg-blue-400/10 px-2 py-1 text-blue-200 transition-colors hover:bg-blue-400/15">Ferramentas</span>
-							<span className="rounded border border-yellow-300/30 bg-yellow-300/10 px-2 py-1 text-yellow-100 transition-colors hover:bg-yellow-300/15">Longo contexto</span>
+							<span className="rounded border border-emerald-400/30 bg-emerald-400/10 px-2 py-1 text-emerald-200 transition-colors hover:bg-emerald-400/15">
+								Agentic
+							</span>
+							<span className="rounded border border-blue-400/30 bg-blue-400/10 px-2 py-1 text-blue-200 transition-colors hover:bg-blue-400/15">
+								Ferramentas
+							</span>
+							<span className="rounded border border-yellow-300/30 bg-yellow-300/10 px-2 py-1 text-yellow-100 transition-colors hover:bg-yellow-300/15">
+								Longo contexto
+							</span>
 						</div>
 					</div>
 
 					<div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
 						{[
-							{ name: "brasa-nano-8b", size: "8B", ctx: "Janela de contexto 10M tokens", color: "emerald" as const },
-							{ name: "brasa-mini-32b", size: "32B", ctx: "Janela de contexto 15M tokens", color: "blue" as const },
-							{ name: "brasa-72b", size: "72B", ctx: "Janela de contexto 25M tokens", color: "yellow" as const },
+							{
+								name: "brasa-nano-8b",
+								size: "8B",
+								ctx: "Janela de contexto 10M tokens",
+								color: "emerald" as const,
+							},
+							{
+								name: "brasa-mini-32b",
+								size: "32B",
+								ctx: "Janela de contexto 15M tokens",
+								color: "blue" as const,
+							},
+							{
+								name: "brasa-72b",
+								size: "72B",
+								ctx: "Janela de contexto 25M tokens",
+								color: "yellow" as const,
+							},
 						].map((m) => (
-							<Card key={m.name} className="group relative overflow-hidden border-white/10 bg-white/5 transition hover:border-white/20 hover:-translate-y-0.5 duration-150" interactive>
+							<Card
+								key={m.name}
+								className="group relative overflow-hidden border-white/10 bg-white/5 transition hover:border-white/20 hover:-translate-y-0.5 duration-150"
+								interactive
+							>
 								{/* accent */}
 								<div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 								<CardHeader className="flex-row items-start justify-between gap-4">
@@ -313,7 +383,9 @@ function App() {
 											<Cpu className="size-4 text-neutral-300" />
 											{m.name}
 										</CardTitle>
-										<CardDescription className="mt-1">instruct • tools • reasoning</CardDescription>
+										<CardDescription className="mt-1">
+											instruct • tools • reasoning
+										</CardDescription>
 									</div>
 									<Badge color={m.color}>{m.size}</Badge>
 								</CardHeader>
@@ -364,13 +436,23 @@ function App() {
 					</div>
 
 					<div className="mt-8 rounded-xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-4">
-						<BrasaTabs.Root defaultValue="iai" className="flex flex-col gap-4 w-fit">
+						<BrasaTabs.Root defaultValue="iai" className="flex flex-col gap-4">
 							<BrasaTabs.List className="inline-flex w-fit">
-								<BrasaTabs.Tab value="iai" color="emerald">IAI Score</BrasaTabs.Tab>
-								<BrasaTabs.Tab value="nvidia" color="blue">NVIDIA GPU</BrasaTabs.Tab>
-								<BrasaTabs.Tab value="tpu" color="yellow">Google TPU</BrasaTabs.Tab>
-								<BrasaTabs.Tab value="groq" color="indigo">Groq LPU</BrasaTabs.Tab>
-								<BrasaTabs.Tab value="cerebras" color="emerald">Cerebras WSE</BrasaTabs.Tab>
+								<BrasaTabs.Tab value="iai" color="emerald">
+									IAI Score
+								</BrasaTabs.Tab>
+								<BrasaTabs.Tab value="nvidia" color="blue">
+									NVIDIA GPU
+								</BrasaTabs.Tab>
+								<BrasaTabs.Tab value="tpu" color="yellow">
+									Google TPU
+								</BrasaTabs.Tab>
+								<BrasaTabs.Tab value="groq" color="indigo">
+									Groq LPU
+								</BrasaTabs.Tab>
+								<BrasaTabs.Tab value="cerebras" color="emerald">
+									Cerebras WSE
+								</BrasaTabs.Tab>
 							</BrasaTabs.List>
 
 							<BrasaTabs.Panel value="iai">
@@ -442,7 +524,11 @@ function App() {
 												}}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
-											<Bar dataKey="tps" name="Tokens/seg" radius={[4, 4, 0, 0]}>
+											<Bar
+												dataKey="tps"
+												name="Tokens/seg"
+												radius={[4, 4, 0, 0]}
+											>
 												{throughputNvidia.map((d, i) => (
 													<Cell key={`nv-${i}`} fill={brandColor(d.modelo)} />
 												))}
@@ -480,7 +566,11 @@ function App() {
 												}}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
-											<Bar dataKey="tps" name="Tokens/seg" radius={[4, 4, 0, 0]}>
+											<Bar
+												dataKey="tps"
+												name="Tokens/seg"
+												radius={[4, 4, 0, 0]}
+											>
 												{throughputTPU.map((d, i) => (
 													<Cell key={`tpu-${i}`} fill={brandColor(d.modelo)} />
 												))}
@@ -518,7 +608,11 @@ function App() {
 												}}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
-											<Bar dataKey="tps" name="Tokens/seg" radius={[4, 4, 0, 0]}>
+											<Bar
+												dataKey="tps"
+												name="Tokens/seg"
+												radius={[4, 4, 0, 0]}
+											>
 												{throughputGroq.map((d, i) => (
 													<Cell key={`groq-${i}`} fill={brandColor(d.modelo)} />
 												))}
@@ -556,7 +650,11 @@ function App() {
 												}}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
-											<Bar dataKey="tps" name="Tokens/seg" radius={[4, 4, 0, 0]}>
+											<Bar
+												dataKey="tps"
+												name="Tokens/seg"
+												radius={[4, 4, 0, 0]}
+											>
 												{throughputCerebras.map((d, i) => (
 													<Cell key={`cer-${i}`} fill={brandColor(d.modelo)} />
 												))}
@@ -571,16 +669,30 @@ function App() {
 			</section>
 
 			{/* Metodologia */}
-			<section id="metodologia" className="border-t border-(--border) bg-(--panel-bg)">
+			<section
+				id="metodologia"
+				className="border-t border-(--border) bg-(--panel-bg)"
+			>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-					<h2 className="text-2xl md:text-3xl font-bold tracking-tight">Como chegamos lá</h2>
+					<h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+						Como chegamos lá
+					</h2>
 					<p className="mt-4 text-neutral-300 max-w-3xl">
-						A sinergia vem de quatro pilares integrados do documento técnico: HRM (planejamento no h-module e execução no l-module), memória Atlas (curto, longo prazo e persistente para contexto &gt;10M tokens), multimodalidade por Early Fusion (vetor unificado desde camadas iniciais) e inferência acelerada (Diffusion-LM + MoE). Isso é continuamente aprimorado pelo ciclo Absolute Zero (Self-Play, RLVR e GSPO), elevando o raciocínio sem depender de dados humanos.
+						A sinergia vem de quatro pilares integrados do documento técnico:
+						HRM (planejamento no h-module e execução no l-module), memória Atlas
+						(curto, longo prazo e persistente para contexto &gt;10M tokens),
+						multimodalidade por Early Fusion (vetor unificado desde camadas
+						iniciais) e inferência acelerada (Diffusion-LM + MoE). Isso é
+						continuamente aprimorado pelo ciclo Absolute Zero (Self-Play, RLVR e
+						GSPO), elevando o raciocínio sem depender de dados humanos.
 					</p>
 
 					{/* 4 steps */}
 					<div className="mt-10 grid gap-5 md:grid-cols-4">
-							<Card className="relative overflow-hidden border-white/10 bg-white/5 transition-transform duration-150 hover:-translate-y-0.5" interactive>
+						<Card
+							className="relative overflow-hidden border-white/10 bg-white/5 transition-transform duration-150 hover:-translate-y-0.5"
+							interactive
+						>
 							<div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-emerald-400/0 via-emerald-400/50 to-emerald-400/0" />
 							<CardHeader>
 								<div className="flex flex-col gap-1.5">
@@ -590,12 +702,18 @@ function App() {
 										</div>
 										<CardTitle className="text-base">HRM</CardTitle>
 									</div>
-									<CardDescription className="mt-0">Planejamento (h-module) desacoplado da execução (l-module) para reduzir complexidade e elevar raciocínio.</CardDescription>
+									<CardDescription className="mt-0">
+										Planejamento (h-module) desacoplado da execução (l-module)
+										para reduzir complexidade e elevar raciocínio.
+									</CardDescription>
 								</div>
 							</CardHeader>
 						</Card>
 
-							<Card className="relative overflow-hidden border-white/10 bg-white/5 transition-transform duration-150 hover:-translate-y-0.5" interactive>
+						<Card
+							className="relative overflow-hidden border-white/10 bg-white/5 transition-transform duration-150 hover:-translate-y-0.5"
+							interactive
+						>
 							<div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-blue-400/0 via-blue-400/50 to-blue-400/0" />
 							<CardHeader>
 								<div className="flex flex-col gap-1.5">
@@ -605,12 +723,18 @@ function App() {
 										</div>
 										<CardTitle className="text-base">Memória Atlas</CardTitle>
 									</div>
-									<CardDescription className="mt-0">Curto/Longo prazo + Persistente para manter contexto amplo (&gt;10M) e consolidar conhecimento.</CardDescription>
+									<CardDescription className="mt-0">
+										Curto/Longo prazo + Persistente para manter contexto amplo
+										(&gt;10M) e consolidar conhecimento.
+									</CardDescription>
 								</div>
 							</CardHeader>
 						</Card>
 
-							<Card className="relative overflow-hidden border-white/10 bg-white/5 transition-transform duration-150 hover:-translate-y-0.5" interactive>
+						<Card
+							className="relative overflow-hidden border-white/10 bg-white/5 transition-transform duration-150 hover:-translate-y-0.5"
+							interactive
+						>
 							<div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-yellow-300/0 via-yellow-300/60 to-yellow-300/0" />
 							<CardHeader>
 								<div className="flex flex-col gap-1.5">
@@ -620,12 +744,18 @@ function App() {
 										</div>
 										<CardTitle className="text-base">Early Fusion</CardTitle>
 									</div>
-									<CardDescription className="mt-0">Integra texto/imagem/áudio desde camadas iniciais em um vetor unificado para correlações profundas.</CardDescription>
+									<CardDescription className="mt-0">
+										Integra texto/imagem/áudio desde camadas iniciais em um
+										vetor unificado para correlações profundas.
+									</CardDescription>
 								</div>
 							</CardHeader>
 						</Card>
 
-							<Card className="relative overflow-hidden border-white/10 bg-white/5 transition-transform duration-150 hover:-translate-y-0.5" interactive>
+						<Card
+							className="relative overflow-hidden border-white/10 bg-white/5 transition-transform duration-150 hover:-translate-y-0.5"
+							interactive
+						>
 							<div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-indigo-400/0 via-indigo-400/50 to-indigo-400/0" />
 							<CardHeader>
 								<div className="flex flex-col gap-1.5">
@@ -633,9 +763,14 @@ function App() {
 										<div className="grid size-8 place-items-center rounded-md border border-white/10 bg-indigo-400/10">
 											<Rocket className="size-4 text-indigo-300" />
 										</div>
-										<CardTitle className="text-base">Inferência + Treino</CardTitle>
+										<CardTitle className="text-base">
+											Inferência + Treino
+										</CardTitle>
 									</div>
-									<CardDescription className="mt-0">Diffusion-LM para paralelizar geração; MoE para especialistas; ciclo Absolute Zero (Self-Play, RLVR, GSPO).</CardDescription>
+									<CardDescription className="mt-0">
+										Diffusion-LM para paralelizar geração; MoE para
+										especialistas; ciclo Absolute Zero (Self-Play, RLVR, GSPO).
+									</CardDescription>
 								</div>
 							</CardHeader>
 						</Card>
@@ -648,9 +783,9 @@ function App() {
 				id="empresas"
 				className="border-t border-(--border) bg-gradient-to-br from-[color-mix(in_oklab,var(--panel-bg)_90%,#0a2233)] via-(--panel-bg) to-[color-mix(in_oklab,var(--panel-bg)_80%,#0b2a3f)]"
 			>
-					<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
 					<div className="rounded-xl border border-white/10 bg-white/5 p-6 md:p-8 grid md:grid-cols-2 gap-6 items-center">
-							<div>
+						<div>
 							<h3 className="text-2xl font-bold tracking-tight">
 								Parcerias e soluções sob medida
 							</h3>
@@ -659,16 +794,16 @@ function App() {
 								suporte dedicado.
 							</p>
 						</div>
-							<div className="flex flex-wrap gap-3 md:justify-end">
+						<div className="flex flex-wrap gap-3 md:justify-end">
 							<a
 								href="#contato"
-									className="inline-flex items-center gap-2 rounded-md bg-emerald-400 px-4 py-2.5 text-sm font-semibold text-black hover:bg-emerald-300 transition-colors"
+								className="inline-flex items-center gap-2 rounded-md bg-emerald-400 px-4 py-2.5 text-sm font-semibold text-black hover:bg-emerald-300 transition-colors"
 							>
 								Fale com vendas
 							</a>
 							<a
 								href="#docs"
-									className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-neutral-200 hover:bg-white/10 transition-colors"
+								className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-neutral-200 hover:bg-white/10 transition-colors"
 							>
 								Ler documentação
 							</a>

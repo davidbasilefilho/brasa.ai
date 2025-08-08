@@ -20,7 +20,7 @@ const listVariants = cva(
 			},
 		},
 		defaultVariants: { size: "md" },
-	}
+	},
 );
 
 const tabVariants = cva(
@@ -35,29 +35,28 @@ const tabVariants = cva(
 		tokens.transition,
 		tokens.focus.ringEmerald,
 		// Interaction
-	"cursor-pointer data-[selected]:cursor-default",
-	// fun hover: slight scale and tint
+		"cursor-pointer data-[selected]:cursor-default",
+		// fun hover: slight scale and tint
 		"hover:bg-white/10 hover:scale-[1.02] will-change-transform",
-	// Animated transitions for transform/opacity/background
-		"transition-[transform,background-color,opacity] duration-200 ease-out",
-		// Selected button: link-like styling
-		"data-[selected]:underline data-[selected]:underline-offset-4",
-		// Selected should not animate hover bg/scale
-		"data-[selected]:hover:bg-transparent data-[selected]:hover:scale-100",
+		// Animated transitions for transform/opacity/background
+		"transition-[transform,background-color,opacity,border-color] duration-200 ease-out",
+		// Selected button: tinted styling handled per-color below
+		// Ensure selected does not scale on hover
+		"data-[selected]:hover:scale-100",
 	),
 	{
 		variants: {
 			color: {
-				emerald:
-					"data-[selected]:text-emerald-300 data-[selected]:hover:text-emerald-200",
-				blue:
-					"data-[selected]:text-blue-200 data-[selected]:hover:text-blue-100",
-				yellow:
-					"data-[selected]:text-yellow-200 data-[selected]:hover:text-yellow-100",
-				indigo:
-					"data-[selected]:text-indigo-200 data-[selected]:hover:text-indigo-100",
-				neutral:
-					"data-[selected]:text-neutral-300 data-[selected]:hover:text-neutral-200",
+					emerald:
+						"data-[selected]:border data-[selected]:border-emerald-400/30 data-[selected]:bg-emerald-400/10 data-[selected]:text-emerald-200 data-[selected]:hover:bg-emerald-400/20",
+					blue:
+						"data-[selected]:border data-[selected]:border-blue-300/40 data-[selected]:bg-blue-300/10 data-[selected]:text-blue-200 data-[selected]:hover:bg-blue-300/20",
+					yellow:
+						"data-[selected]:border data-[selected]:border-yellow-300/40 data-[selected]:bg-yellow-300/10 data-[selected]:text-yellow-200 data-[selected]:hover:bg-yellow-300/20",
+					indigo:
+						"data-[selected]:border data-[selected]:border-indigo-400/30 data-[selected]:bg-indigo-400/10 data-[selected]:text-indigo-200 data-[selected]:hover:bg-indigo-400/20",
+					neutral:
+						"data-[selected]:border data-[selected]:border-(--border) data-[selected]:bg-white/5 data-[selected]:text-neutral-200 data-[selected]:hover:bg-white/10",
 			},
 			size: {
 				sm: "h-8 px-2.5 text-xs",
@@ -68,7 +67,7 @@ const tabVariants = cva(
 			color: "emerald",
 			size: "md",
 		},
-	}
+	},
 );
 
 type TabsRootProps = React.ComponentPropsWithoutRef<typeof Tabs.Root>;

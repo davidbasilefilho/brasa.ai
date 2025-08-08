@@ -11,7 +11,7 @@
 		/* Surface & borders */
 		--panel-bg: #061826;
 		--panel-muted-bg: #051b2b;
-		--border: rgba(255, 255, 255, 0.10);
+		--border: rgba(255, 255, 255, 0.1);
 
 		/* Text */
 		--foreground: #e5e7eb; /* neutral-200 */

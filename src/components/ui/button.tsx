@@ -18,6 +18,7 @@ const buttonVariants = cva(
 				outline: cn(tokens.panelMuted),
 				ghost: "bg-transparent",
 				link: "underline underline-offset-4",
+				tinted: "", // translucent colored background + border + text
 			},
 			color: {
 				emerald: "",
@@ -149,6 +150,38 @@ const buttonVariants = cva(
 				variant: "ghost",
 				color: "neutral",
 				className: cn(tokens.text.dim, "hover:bg-white/10"),
+			},
+
+			// Tinted by color (semi-transparent bg + colored border + colored text)
+			{
+				variant: "tinted",
+				color: "yellow",
+				className: cn(
+					"border border-yellow-300/40",
+					"bg-yellow-300/10",
+					"text-yellow-200",
+					"hover:bg-yellow-300/20",
+				),
+			},
+			{
+				variant: "tinted",
+				color: "blue",
+				className: cn(
+					"border border-blue-300/40",
+					"bg-blue-300/10",
+					"text-blue-200",
+					"hover:bg-blue-300/20",
+				),
+			},
+			{
+				variant: "tinted",
+				color: "emerald",
+				className: cn(
+					"border border-emerald-400/30",
+					"bg-emerald-400/10",
+					"text-emerald-200",
+					"hover:bg-emerald-400/20",
+				),
 			},
 
 			// Link by color
