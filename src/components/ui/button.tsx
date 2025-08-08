@@ -1,7 +1,7 @@
-import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
 import { cn } from "../utils/cn";
-import { tokens, accents, type Accent } from "../utils/theme";
+import { type Accent, accents, tokens } from "../utils/theme";
 
 const buttonVariants = cva(
 	cn(

@@ -1,6 +1,6 @@
-import * as React from "react";
 import { Tabs } from "@base-ui-components/react/tabs";
 import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
 import { cn } from "../utils/cn";
 import { type Accent, tokens } from "../utils/theme";
 
@@ -47,16 +47,15 @@ const tabVariants = cva(
 	{
 		variants: {
 			color: {
-					emerald:
-						"data-[selected]:border data-[selected]:border-emerald-400/30 data-[selected]:bg-emerald-400/10 data-[selected]:text-emerald-200 data-[selected]:hover:bg-emerald-400/20",
-					blue:
-						"data-[selected]:border data-[selected]:border-blue-300/40 data-[selected]:bg-blue-300/10 data-[selected]:text-blue-200 data-[selected]:hover:bg-blue-300/20",
-					yellow:
-						"data-[selected]:border data-[selected]:border-yellow-300/40 data-[selected]:bg-yellow-300/10 data-[selected]:text-yellow-200 data-[selected]:hover:bg-yellow-300/20",
-					indigo:
-						"data-[selected]:border data-[selected]:border-indigo-400/30 data-[selected]:bg-indigo-400/10 data-[selected]:text-indigo-200 data-[selected]:hover:bg-indigo-400/20",
-					neutral:
-						"data-[selected]:border data-[selected]:border-(--border) data-[selected]:bg-white/5 data-[selected]:text-neutral-200 data-[selected]:hover:bg-white/10",
+				emerald:
+					"data-[selected]:border data-[selected]:border-emerald-400/30 data-[selected]:bg-emerald-400/10 data-[selected]:text-emerald-200 data-[selected]:hover:bg-emerald-400/20",
+				blue: "data-[selected]:border data-[selected]:border-blue-300/40 data-[selected]:bg-blue-300/10 data-[selected]:text-blue-200 data-[selected]:hover:bg-blue-300/20",
+				yellow:
+					"data-[selected]:border data-[selected]:border-yellow-300/40 data-[selected]:bg-yellow-300/10 data-[selected]:text-yellow-200 data-[selected]:hover:bg-yellow-300/20",
+				indigo:
+					"data-[selected]:border data-[selected]:border-indigo-400/30 data-[selected]:bg-indigo-400/10 data-[selected]:text-indigo-200 data-[selected]:hover:bg-indigo-400/20",
+				neutral:
+					"data-[selected]:border data-[selected]:border-(--border) data-[selected]:bg-white/5 data-[selected]:text-neutral-200 data-[selected]:hover:bg-white/10",
 			},
 			size: {
 				sm: "h-8 px-2.5 text-xs",

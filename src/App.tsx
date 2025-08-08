@@ -118,11 +118,11 @@ function App() {
 			<header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-[color-mix(in_oklab,var(--panel-bg)_70%,transparent)] border-b border-(--border)">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 					<div className="flex items-center gap-3">
-						<div className="size-8 rounded bg-emerald-500/20 grid place-items-center">
+						<div className="size-8 rounded-(--radius) bg-emerald-500/20 grid place-items-center">
 							<span className="text-emerald-400 font-black">BA</span>
 						</div>
 						<span className="font-semibold tracking-tight">BrasaAI</span>
-						<span className="ml-3 text-xs text-neutral-300/80 border border-white/10 rounded px-1.5 py-0.5">
+						<span className="ml-3 text-xs text-neutral-300/80 border border-white/10 rounded-(--radius) px-1.5 py-0.5">
 							Laboratório Brasileiro de IA
 						</span>
 					</div>
@@ -188,16 +188,16 @@ function App() {
 								</Button>
 							</div>
 							<div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-neutral-300/90">
-								<span className="rounded border border-white/10 bg-white/5 px-2 py-1">
+								<span className="rounded-(--radius) border border-white/10 bg-white/5 px-2 py-1">
 									Agentic by default
 								</span>
-								<span className="rounded border border-white/10 bg-white/5 px-2 py-1">
+								<span className="rounded-(--radius) border border-white/10 bg-white/5 px-2 py-1">
 									Ferramentas MCP
 								</span>
-								<span className="rounded border border-white/10 bg-white/5 px-2 py-1">
+								<span className="rounded-(--radius) border border-white/10 bg-white/5 px-2 py-1">
 									REPL & Terminal
 								</span>
-								<span className="rounded border border-white/10 bg-white/5 px-2 py-1">
+								<span className="rounded-(--radius) border border-white/10 bg-white/5 px-2 py-1">
 									Web crawling
 								</span>
 							</div>
@@ -225,7 +225,7 @@ function App() {
 						</div>
 						<a
 							href="#empresas"
-							className="hidden md:inline-flex items-center gap-2 rounded-md bg-emerald-400/90 px-3 py-2 text-sm font-semibold text-black hover:bg-emerald-300"
+							className="hidden md:inline-flex items-center gap-2 rounded-(--radius) bg-emerald-400/90 px-3 py-2 text-sm font-semibold text-black hover:bg-emerald-300"
 						>
 							Fale com vendas
 						</a>
@@ -248,27 +248,27 @@ function App() {
 							</CardHeader>
 							<CardContent className="mt-auto">
 								<ul className="grid grid-cols-2 gap-2 text-xs text-neutral-300">
-									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Monitor className="size-3.5 text-emerald-300/80" />
 										<span>Browser virtual</span>
 									</li>
-									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Globe className="size-3.5 text-blue-300/80" />
 										<span>Web crawl API</span>
 									</li>
-									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<TerminalIcon className="size-3.5 text-yellow-300/80" />
 										<span>Terminal</span>
 									</li>
-									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Code2 className="size-3.5 text-indigo-300/80" />
 										<span>REPL</span>
 									</li>
-									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Plug className="size-3.5 text-emerald-300/80" />
 										<span>Ferramentas MCP</span>
 									</li>
-									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Wand2 className="size-3.5 text-pink-300/80" />
 										<span>Tool-use avançado</span>
 									</li>
@@ -293,23 +293,23 @@ function App() {
 							</CardHeader>
 							<CardContent className="mt-auto">
 								<ul className="grid grid-cols-2 gap-2 text-xs text-neutral-300">
-									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Code2 className="size-3.5 text-blue-300/80" />
 										<span>Codegen agentic</span>
 									</li>
-									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Cpu className="size-3.5 text-emerald-300/80" />
 										<span>Integração LSP</span>
 									</li>
-									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<TerminalIcon className="size-3.5 text-yellow-300/80" />
 										<span>REPL & Terminal</span>
 									</li>
-									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Globe className="size-3.5 text-blue-300/80" />
 										<span>Web crawl API</span>
 									</li>
-									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Plug className="size-3.5 text-emerald-300/80" />
 										<span>Ferramentas MCP</span>
 									</li>
@@ -337,13 +337,13 @@ function App() {
 							</p>
 						</div>
 						<div className="hidden md:flex items-center gap-2 text-xs">
-							<span className="rounded border border-emerald-400/30 bg-emerald-400/10 px-2 py-1 text-emerald-200 transition-colors hover:bg-emerald-400/15">
+							<span className="rounded-(--radius) border border-emerald-400/30 bg-emerald-400/10 px-2 py-1 text-emerald-200 transition-colors hover:bg-emerald-400/15">
 								Agentic
 							</span>
-							<span className="rounded border border-blue-400/30 bg-blue-400/10 px-2 py-1 text-blue-200 transition-colors hover:bg-blue-400/15">
+							<span className="rounded-(--radius) border border-blue-400/30 bg-blue-400/10 px-2 py-1 text-blue-200 transition-colors hover:bg-blue-400/15">
 								Ferramentas
 							</span>
-							<span className="rounded border border-yellow-300/30 bg-yellow-300/10 px-2 py-1 text-yellow-100 transition-colors hover:bg-yellow-300/15">
+							<span className="rounded-(--radius) border border-yellow-300/30 bg-yellow-300/10 px-2 py-1 text-yellow-100 transition-colors hover:bg-yellow-300/15">
 								Longo contexto
 							</span>
 						</div>
@@ -435,7 +435,7 @@ function App() {
 						</a>
 					</div>
 
-					<div className="mt-8 rounded-xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-4">
+					<div className="mt-8 rounded-(--radius-xl) border border-white/10 bg-[rgba(255,255,255,0.03)] p-4">
 						<BrasaTabs.Root defaultValue="iai" className="flex flex-col gap-4">
 							<BrasaTabs.List className="inline-flex w-fit">
 								<BrasaTabs.Tab value="iai" color="emerald">
@@ -784,7 +784,7 @@ function App() {
 				className="border-t border-(--border) bg-gradient-to-br from-[color-mix(in_oklab,var(--panel-bg)_90%,#0a2233)] via-(--panel-bg) to-[color-mix(in_oklab,var(--panel-bg)_80%,#0b2a3f)]"
 			>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-					<div className="rounded-xl border border-white/10 bg-white/5 p-6 md:p-8 grid md:grid-cols-2 gap-6 items-center">
+					<div className="rounded-(--radius-xl) border border-white/10 bg-white/5 p-6 md:p-8 grid md:grid-cols-2 gap-6 items-center">
 						<div>
 							<h3 className="text-2xl font-bold tracking-tight">
 								Parcerias e soluções sob medida
@@ -797,13 +797,13 @@ function App() {
 						<div className="flex flex-wrap gap-3 md:justify-end">
 							<a
 								href="#contato"
-								className="inline-flex items-center gap-2 rounded-md bg-emerald-400 px-4 py-2.5 text-sm font-semibold text-black hover:bg-emerald-300 transition-colors"
+								className="inline-flex items-center gap-2 rounded-(--radius) bg-emerald-400 px-4 py-2.5 text-sm font-semibold text-black hover:bg-emerald-300 transition-colors"
 							>
 								Fale com vendas
 							</a>
 							<a
 								href="#docs"
-								className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-neutral-200 hover:bg-white/10 transition-colors"
+								className="inline-flex items-center gap-2 rounded-(--radius) border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-neutral-200 hover:bg-white/10 transition-colors"
 							>
 								Ler documentação
 							</a>
