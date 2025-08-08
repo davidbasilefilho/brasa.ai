@@ -1,6 +1,6 @@
 import "./index.css";
 import { BrasaTabs, Card, CardContent, CardDescription, CardHeader, CardTitle, Badge } from "./components";
-import { Cpu, Gauge, Layers, Database, Merge, Rocket, Puzzle } from "lucide-react";
+import { Cpu, Gauge, Layers, Database, Merge, Rocket, Puzzle, Bot, SquareTerminal, Monitor, Globe, Terminal as TerminalIcon, Code2, Plug, Wand2 } from "lucide-react";
 import {
 	XAxis,
 	YAxis,
@@ -181,7 +181,10 @@ function App() {
 						<Card className="transition duration-150 hover:-translate-y-0.5 hover:bg-white/5 flex h-full flex-col gap-4">
 							<CardHeader>
 								<div>
-									<CardTitle>Brasa Chat</CardTitle>
+									<CardTitle className="flex items-center gap-2">
+										<Bot className="size-4 text-emerald-300" />
+										Brasa Chat
+									</CardTitle>
 									<CardDescription>
 										Chatbot agentico por padrão, com browser virtual, API de web scraping/crawl, terminal, REPL e acesso a ferramentas MCP (Model Context Protocol).
 									</CardDescription>
@@ -190,12 +193,30 @@ function App() {
 							</CardHeader>
 							<CardContent className="mt-auto">
 								<ul className="grid grid-cols-2 gap-2 text-xs text-neutral-300">
-									<li className="rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">Browser virtual</li>
-									<li className="rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">Web crawl API</li>
-									<li className="rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">Terminal</li>
-									<li className="rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">REPL</li>
-									<li className="rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">Ferramentas MCP</li>
-									<li className="rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">Tool-use avançado</li>
+									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+										<Monitor className="size-3.5 text-emerald-300/80" />
+										<span>Browser virtual</span>
+									</li>
+									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+										<Globe className="size-3.5 text-blue-300/80" />
+										<span>Web crawl API</span>
+									</li>
+									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+										<TerminalIcon className="size-3.5 text-yellow-300/80" />
+										<span>Terminal</span>
+									</li>
+									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+										<Code2 className="size-3.5 text-indigo-300/80" />
+										<span>REPL</span>
+									</li>
+									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+										<Plug className="size-3.5 text-emerald-300/80" />
+										<span>Ferramentas MCP</span>
+									</li>
+									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+										<Wand2 className="size-3.5 text-pink-300/80" />
+										<span>Tool-use avançado</span>
+									</li>
 								</ul>
 							</CardContent>
 						</Card>
@@ -203,7 +224,10 @@ function App() {
 						<Card className="transition duration-150 hover:-translate-y-0.5 hover:bg-white/5 flex h-full flex-col gap-4">
 							<CardHeader>
 								<div>
-									<CardTitle>Brasa CLI</CardTitle>
+									<CardTitle className="flex items-center gap-2">
+										<SquareTerminal className="size-4 text-blue-300" />
+										Brasa CLI
+									</CardTitle>
 									<CardDescription>
 										Ferramenta de CLI agentica para criação de código, com suporte a MCP, REPL, terminal, API de web scraping/crawl e integração com LSP (Language Server Protocol).
 									</CardDescription>
@@ -212,11 +236,26 @@ function App() {
 							</CardHeader>
 							<CardContent className="mt-auto">
 								<ul className="grid grid-cols-2 gap-2 text-xs text-neutral-300">
-									<li className="rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">Codegen agentic</li>
-									<li className="rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">Integração LSP</li>
-									<li className="rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">REPL & Terminal</li>
-									<li className="rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">Web crawl API</li>
-									<li className="rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">Ferramentas MCP</li>
+									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+										<Code2 className="size-3.5 text-blue-300/80" />
+										<span>Codegen agentic</span>
+									</li>
+									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+										<Cpu className="size-3.5 text-emerald-300/80" />
+										<span>Integração LSP</span>
+									</li>
+									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+										<TerminalIcon className="size-3.5 text-yellow-300/80" />
+										<span>REPL & Terminal</span>
+									</li>
+									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+										<Globe className="size-3.5 text-blue-300/80" />
+										<span>Web crawl API</span>
+									</li>
+									<li className="flex items-center gap-2 rounded border border-white/10 bg-[#061826] px-2.5 py-1.5">
+										<Plug className="size-3.5 text-emerald-300/80" />
+										<span>Ferramentas MCP</span>
+									</li>
 								</ul>
 							</CardContent>
 						</Card>

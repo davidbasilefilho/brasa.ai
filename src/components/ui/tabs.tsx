@@ -4,32 +4,41 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../utils/cn";
 import { accents, type Accent, tokens } from "../utils/theme";
 
-const listVariants = cva("flex flex-wrap gap-2", {
-	variants: {
-		size: {
-			sm: "gap-1.5",
-			md: "gap-2",
+const listVariants = cva(
+	cn(
+		"flex flex-wrap items-center",
+		tokens.roundedLg,
+		tokens.transition,
+		// container background integrates with panels
+		"border border-(--border) bg-(--panel-muted-bg)",
+	),
+	{
+		variants: {
+			size: {
+				sm: "gap-1.5 p-1.5",
+				md: "gap-2 p-2",
+			},
 		},
-	},
-	defaultVariants: { size: "md" },
-});
+		defaultVariants: { size: "md" },
+	}
+);
 
 const tabVariants = cva(
 	cn(
-		// Base: align with regular button (outline/neutral-like)
+		// Base: segmented control button
 		"inline-flex items-center justify-center font-semibold gap-2",
 		tokens.rounded,
 		"h-9 px-3 text-sm",
-		"border border-(--border) bg-(--panel-muted-bg)",
+		// integrate with list background: no border by default
+		"bg-transparent",
 		tokens.text.dim,
 		tokens.transition,
 		tokens.focus.ringEmerald,
 		// Interaction
 		"cursor-pointer data-[selected]:cursor-default",
 		"hover:bg-white/10",
-		"transition-transform duration-150 hover:-translate-y-0.5 data-[selected]:hover:translate-y-0",
-		// Selected tweaks
-		"data-[selected]:border-transparent",
+		// Selected button appears solid
+		"data-[selected]:shadow-sm",
 	),
 	{
 		variants: {
@@ -49,7 +58,7 @@ const tabVariants = cva(
 			color: "emerald",
 			size: "md",
 		},
-	},
+	}
 );
 
 type TabsRootProps = React.ComponentPropsWithoutRef<typeof Tabs.Root>;
