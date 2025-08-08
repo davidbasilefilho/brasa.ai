@@ -18,7 +18,7 @@ const buttonVariants = cva(
 				outline: cn(tokens.panelMuted),
 				ghost: "bg-transparent",
 				link: "underline underline-offset-4",
-			tinted: "",
+				tinted: "",
 			},
 			color: {
 				emerald: "",
