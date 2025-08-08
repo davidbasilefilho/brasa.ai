@@ -33,7 +33,7 @@ const badgeVariants = cva(
 					accents.indigo.mutedText,
 				),
 				neutral:
-					"border border-[--border] bg-[--panel-muted-bg] text-[--muted]",
+					"border border-(--border) bg-(--panel-muted-bg) text-(--muted)",
 			},
 			size: {
 				sm: "text-[11px] px-1.5 py-0.5 rounded",

@@ -52,7 +52,7 @@ export const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<p
 		ref={ref}
-		className={cn("mt-1 text-sm text-[--muted]", className)}
+		className={cn("mt-1 text-sm text-(--muted)", className)}
 		{...props}
 	/>
 ));

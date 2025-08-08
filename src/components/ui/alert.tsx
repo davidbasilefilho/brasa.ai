@@ -5,7 +5,7 @@ import { cn } from "../utils/cn";
 const alertVariants = cva("w-full rounded-md border px-3 py-2 text-sm", {
 	variants: {
 		variant: {
-			default: "border-[--border] bg-[--panel-bg] text-[--foreground]",
+			default: "border-(--border) bg-(--panel-bg) text-(--foreground)",
 			success:
 				"border-[color-mix(in_oklab,var(--accent-green)_30%,transparent)] bg-[color-mix(in_oklab,var(--accent-green)_10%,transparent)] text-[color-mix(in_oklab,var(--accent-green)_70%,white)]",
 			info: "border-[color-mix(in_oklab,var(--accent-blue)_30%,transparent)] bg-[color-mix(in_oklab,var(--accent-blue)_10%,transparent)] text-[color-mix(in_oklab,var(--accent-blue)_70%,white)]",

@@ -6,7 +6,7 @@ import { tokens } from "../utils/theme";
 const textareaVariants = cva(
 	cn(
 		"w-full",
-		"bg-[--panel-muted-bg]",
+		"bg-(--panel-muted-bg)",
 		tokens.text.base,
 		tokens.border,
 		tokens.rounded ?? "rounded-md",

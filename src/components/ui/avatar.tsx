@@ -28,7 +28,7 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
 				ref={ref}
 				className={cn(
 					"relative inline-flex shrink-0 items-center justify-center overflow-hidden",
-					"bg-[color-mix(in_oklab,white_10%,var(--panel-bg))] text-[--muted]",
+					"bg-[color-mix(in_oklab,white_10%,var(--panel-bg))] text-(--muted)",
 					sizeMap[size],
 					radius,
 					className,

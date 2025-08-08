@@ -9,7 +9,7 @@ export const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(
 			<div
 				ref={ref}
 				className={cn(
-					"animate-pulse rounded-[var(--radius)] bg-[color-mix(in_oklab,white_10%,var(--panel-bg))]",
+					"animate-pulse rounded-(--radius) bg-[color-mix(in_oklab,white_10%,var(--panel-bg))]",
 					className,
 				)}
 				{...props}

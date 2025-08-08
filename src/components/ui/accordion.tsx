@@ -14,7 +14,7 @@ export const AccordionItem = React.forwardRef<
 	return (
 		<Accordion.Item
 			ref={ref}
-			className={cn("rounded-[var(--radius)]", tokens.panel, "p-0", className)}
+			className={cn("rounded-(--radius)", tokens.panel, "p-0", className)}
 			{...props}
 		/>
 	);
@@ -27,7 +27,7 @@ export const AccordionHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={cn("px-3 py-2", "border-b border-[--border]", className)}
+		className={cn("px-3 py-2", "border-b border-(--border)", className)}
 		{...props}
 	/>
 ));
@@ -64,7 +64,7 @@ export const AccordionContent = React.forwardRef<
 	return (
 		<Accordion.Panel
 			ref={ref}
-			className={cn("px-3 py-3 text-sm text-[--muted]", className)}
+			className={cn("px-3 py-3 text-sm text-(--muted)", className)}
 			{...props}
 		/>
 	);

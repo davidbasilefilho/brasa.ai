@@ -16,12 +16,20 @@ const listVariants = cva("flex flex-wrap gap-2", {
 
 const tabVariants = cva(
 	cn(
-		"rounded px-3 py-1.5 text-sm inline-flex items-center gap-2",
-		"border",
-		tokens.surfaceMuted,
-		"border-[--border]",
+		// Base: align with regular button (outline/neutral-like)
+		"inline-flex items-center justify-center font-semibold gap-2",
+		tokens.rounded,
+		"h-9 px-3 text-sm",
+		"border border-(--border) bg-(--panel-muted-bg)",
+		tokens.text.dim,
 		tokens.transition,
 		tokens.focus.ringEmerald,
+		// Interaction
+		"cursor-pointer data-[selected]:cursor-default",
+		"hover:bg-white/10",
+		"transition-transform duration-150 hover:-translate-y-0.5 data-[selected]:hover:translate-y-0",
+		// Selected tweaks
+		"data-[selected]:border-transparent",
 	),
 	{
 		variants: {
@@ -33,8 +41,8 @@ const tabVariants = cva(
 				neutral: accents.neutral.tabSelected,
 			},
 			size: {
-				sm: "px-2.5 py-1 text-xs",
-				md: "px-3 py-1.5 text-sm",
+				sm: "h-8 px-2.5 text-xs",
+				md: "h-9 px-3 text-sm",
 			},
 		},
 		defaultVariants: {

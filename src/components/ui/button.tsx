@@ -9,7 +9,7 @@ const buttonVariants = cva(
 		tokens.rounded ?? "rounded-md",
 		tokens.transition,
 		tokens.focus.ringEmerald,
-		"disabled:opacity-50 disabled:pointer-events-none select-none",
+		"disabled:opacity-50 disabled:pointer-events-none",
 	),
 	{
 		variants: {
