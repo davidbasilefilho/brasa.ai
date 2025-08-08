@@ -4,9 +4,10 @@
 /* Tailwind v4 CSS-first theme config */
 /* biome-ignore lint/correctness/noUnknownAtRules: Tailwind v4 CSS @theme directive */
 @theme {
-	/* Radii */
 	--default-font-family: "Geist";
 	--default-mono-font-family: "Geist Mono";
+
+	/* Radii */
 	--radius-xs: 0.25rem; /* 4px */
 	--radius-sm: 0.375rem; /* 6px */
 	--radius: 0.5rem; /* 8px */
