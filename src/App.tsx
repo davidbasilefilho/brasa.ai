@@ -98,7 +98,7 @@ function App() {
 					<div className="absolute -bottom-24 -right-24 h-[40rem] w-[40rem] rounded-full bg-[conic-gradient(from_220deg_at_50%_50%,rgba(59,130,246,0.18),transparent_45%)] blur-2xl" />
 				</div>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-					<div className="grid md:grid-cols-2 items-center gap-10">
+					<div className="grid gap-10">
 						<div>
 							<div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-200">
 								<span className="size-2 rounded-full bg-emerald-400" />
