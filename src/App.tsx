@@ -112,6 +112,51 @@ function App() {
 	const brandColor = (modelo: string) =>
 		brandColors[getBrand(modelo)] ?? brandColors.other;
 
+	// Tooltip customizado para melhor legibilidade
+	type CustomTooltipProps = {
+		active?: boolean;
+		payload?: ReadonlyArray<{
+			name?: string;
+			value?: number | string;
+			payload?: Record<string, unknown>;
+		}>;
+	};
+	const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
+		if (!active || !payload || payload.length === 0) return null;
+		const first = payload[0];
+		const name = (first.name ?? "") as string;
+		const value = (first.value ?? "") as number | string;
+		const row = (first.payload ?? {}) as { modelo?: string };
+		const modelo = row?.modelo ?? "";
+		const color = modelo ? brandColor(modelo) : "#34d399";
+		const isScore = name === "IAI";
+
+		return (
+			<div className="rounded-(--radius) border border-white/10 bg-[#03111c] p-3 shadow-lg min-w-[12rem]">
+				<div className="flex items-center gap-2 text-[13px] text-neutral-300 mb-2">
+					<span
+						className="inline-block size-2 rounded-full"
+						style={{ backgroundColor: color }}
+					/>
+					<span className="truncate">{modelo}</span>
+				</div>
+				<div className="flex items-center justify-between gap-3">
+					<div className="flex items-center gap-2 text-xs text-neutral-400">
+						{isScore ? (
+							<Gauge className="size-3.5" style={{ color }} />
+						) : (
+							<Rocket className="size-3.5" style={{ color }} />
+						)}
+						<span>{name}</span>
+					</div>
+					<div className="text-base font-semibold text-white">
+						{typeof value === "number" ? value.toLocaleString() : value}
+					</div>
+				</div>
+			</div>
+		);
+	};
+
 	return (
 		<div className="min-h-dvh bg-(--panel-bg) text-neutral-100">
 			{/* Header */}
@@ -477,13 +522,7 @@ function App() {
 												domain={[0, 100]}
 											/>
 											<Tooltip
-												contentStyle={{
-													background: "#03111c",
-													border: "1px solid #133042",
-													color: "#e5e5e5",
-													borderRadius: 8,
-													padding: "8px 10px",
-												}}
+												content={<CustomTooltip />}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
 											<Bar dataKey="score" name="IAI" radius={[4, 4, 0, 0]}>
@@ -515,13 +554,7 @@ function App() {
 											/>
 											<YAxis tick={{ fill: "#cbd5e1", fontSize: 12 }} />
 											<Tooltip
-												contentStyle={{
-													background: "#03111c",
-													border: "1px solid #133042",
-													color: "#e5e5e5",
-													borderRadius: 8,
-													padding: "8px 10px",
-												}}
+												content={<CustomTooltip />}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
 											<Bar
@@ -557,13 +590,7 @@ function App() {
 											/>
 											<YAxis tick={{ fill: "#cbd5e1", fontSize: 12 }} />
 											<Tooltip
-												contentStyle={{
-													background: "#03111c",
-													border: "1px solid #133042",
-													color: "#e5e5e5",
-													borderRadius: 8,
-													padding: "8px 10px",
-												}}
+												content={<CustomTooltip />}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
 											<Bar
@@ -599,13 +626,7 @@ function App() {
 											/>
 											<YAxis tick={{ fill: "#cbd5e1", fontSize: 12 }} />
 											<Tooltip
-												contentStyle={{
-													background: "#03111c",
-													border: "1px solid #133042",
-													color: "#e5e5e5",
-													borderRadius: 8,
-													padding: "8px 10px",
-												}}
+												content={<CustomTooltip />}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
 											<Bar
@@ -641,13 +662,7 @@ function App() {
 											/>
 											<YAxis tick={{ fill: "#cbd5e1", fontSize: 12 }} />
 											<Tooltip
-												contentStyle={{
-													background: "#03111c",
-													border: "1px solid #133042",
-													color: "#e5e5e5",
-													borderRadius: 8,
-													padding: "8px 10px",
-												}}
+												content={<CustomTooltip />}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
 											<Bar
