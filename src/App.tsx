@@ -75,10 +75,10 @@ function App() {
 		},
 	];
 	const heroBadges: { label: ReactNode }[] = [
-		{ label: <>Agentic by default</> },
+		{ label: <>Agente por padrão</> },
 		{ label: <>Ferramentas MCP</> },
 		{ label: <>REPL & Terminal</> },
-		{ label: <>Web crawling</> },
+		{ label: <>Rastreamento Web</> },
 	];
 
 	const products: {
@@ -101,9 +101,8 @@ function App() {
 			),
 			description: (
 				<>
-					Chatbot agentico por padrão, com browser virtual, API de web
-					scraping/crawl, terminal, REPL e acesso a ferramentas MCP (Model
-					Context Protocol).
+					Chatbot agente por padrão, com navegador virtual, API de web crawl,
+					terminal, REPL e acesso a ferramentas MCP (Model Context Protocol).
 				</>
 			),
 			badge: { color: "emerald", label: <>Web</> },
@@ -111,7 +110,7 @@ function App() {
 			features: [
 				{
 					icon: Monitor,
-					label: <>Browser virtual</>,
+					label: <>Navegador virtual</>,
 					iconColorClass: "text-emerald-300/80",
 				},
 				{
@@ -194,15 +193,17 @@ function App() {
 		color: "emerald" | "blue" | "yellow";
 	}[] = [
 		{
-			name: "brasa-nano-8b",
-			title: <>brasa-nano-8b</>,
-			size: <>8B</>,
+			name: "brasa-72b",
+			title: <>brasa-72b</>,
+			size: <>72B</>,
 			description: (
-				<>Modelo nano otimizado para agentes, com foco em alta eficiência.</>
+				<>
+					Modelo flagship otimizado para agentes, com foco em alto desempenho.
+				</>
 			),
-			target: <>hardware de alta eficiência.</>,
-			ctx: <>Janela de contexto 10M tokens</>,
-			color: "emerald",
+			target: <>hardware para data centers.</>,
+			ctx: <>Janela de contexto 25M tokens</>,
+			color: "yellow",
 		},
 		{
 			name: "brasa-mini-32b",
@@ -219,15 +220,15 @@ function App() {
 			color: "blue",
 		},
 		{
-			name: "brasa-72b",
-			title: <>brasa-72b</>,
-			size: <>72B</>,
+			name: "brasa-nano-8b",
+			title: <>brasa-nano-8b</>,
+			size: <>8B</>,
 			description: (
-				<>Modelo padrão otimizado para agentes, com foco em alto desempenho.</>
+				<>Modelo nano otimizado para agentes, com foco em alta eficiência.</>
 			),
-			target: <>hardware para data centers.</>,
-			ctx: <>Janela de contexto 25M tokens</>,
-			color: "yellow",
+			target: <>hardware de alta eficiência.</>,
+			ctx: <>Janela de contexto 10M tokens</>,
+			color: "emerald",
 		},
 	];
 
@@ -406,7 +407,6 @@ function App() {
 					transform="rotate(-25)"
 				>
 					{item?.label ?? value}
-					{item?.label ?? value}
 				</text>
 			</g>
 		);
@@ -481,7 +481,7 @@ function App() {
 										aria-hidden="true"
 										className="mx-0.5 inline-block h-3 w-px bg-emerald-400/40"
 									/>
-									<span>aberto a parcerias</span>
+									<span>Aberto a parcerias</span>
 								</Badge>
 							</div>
 							<h1
@@ -504,7 +504,7 @@ function App() {
 							</h1>
 							<p
 								className={cn(
-									"mt-6 text-lg leading-relaxed",
+									"mt-6 text-base leading-relaxed md:text-lg",
 									tokens.text.muted,
 								)}
 							>
@@ -563,7 +563,7 @@ function App() {
 							<a href="#empresas">Fale com vendas</a>
 						</Button>
 					</div>
-					<div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+					<div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch">
 						{products.map((p, idx) => (
 							<Card
 								key={idx}
@@ -623,7 +623,7 @@ function App() {
 						</div>
 					</div>
 
-					<div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
+					<div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 						{models.map((m) => (
 							<Card
 								key={m.name}
@@ -705,14 +705,14 @@ function App() {
 
 					<div
 						className={cn(
-							"mt-8 p-4 rounded-xl border border-white/10 bg-[rgba(255,255,255,0.03)]",
+							"mt-8 p-4 rounded-xl border border-white/10 bg-panel-bg",
 						)}
 					>
 						<BrasaTabs.Root
 							defaultValue="aa-index"
 							className="flex flex-col gap-4"
 						>
-							<BrasaTabs.List className="inline-flex w-fit">
+							<BrasaTabs.List>
 								{[
 									{
 										value: "aa-index",
@@ -985,7 +985,7 @@ function App() {
 						GSPO), elevando o raciocínio sem depender de dados humanos.
 					</p>
 
-					<div className="mt-10 grid gap-5 md:grid-cols-4">
+					<div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 						{[
 							{
 								key: "hrm",
@@ -1044,7 +1044,7 @@ function App() {
 							<Card
 								key={s.key}
 								className={cn(
-									"relative overflow-hidden transition-transform duration-150 hover:-translate-y-0.5 border border-white/10 bg-white/5",
+									"relative overflow-hidden transition-transform duration-150 hover:-translate-y-0.5 border border-border bg-panel-muted-bg",
 								)}
 								interactive
 							>

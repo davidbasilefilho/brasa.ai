@@ -6,7 +6,7 @@ import { type Accent, tokens } from "../utils/theme";
 
 const listVariants = cva(
 	cn(
-		"flex flex-wrap items-center",
+		"flex w-full flex-wrap items-center justify-center md:justify-start",
 		tokens.roundedLg,
 		tokens.transition,
 		"border border-border bg-panel-muted-bg",
@@ -14,8 +14,8 @@ const listVariants = cva(
 	{
 		variants: {
 			size: {
-				sm: "gap-1.5 p-1.5",
-				md: "gap-2 p-2",
+				sm: "gap-x-1.5 gap-y-1.5 px-1.5 py-2.5 md:px-2 md:py-2",
+				md: "gap-x-4 gap-y-1.5 px-1.5 py-2.5 md:px-2 md:py-2",
 			},
 		},
 		defaultVariants: { size: "md" },
@@ -24,15 +24,15 @@ const listVariants = cva(
 
 const tabVariants = cva(
 	cn(
-		"inline-flex items-center justify-center font-semibold gap-2",
+		"inline-flex items-center justify-center text-center leading-snug font-semibold gap-2",
 		tokens.rounded,
-		"h-9 px-3 text-sm",
+		"min-h-[2.25rem] px-2.5 py-1 text-sm md:min-h-0 md:h-9 md:px-3 md:py-0",
 		"bg-transparent",
 		tokens.text.dim,
 		tokens.transition,
 		tokens.focus.ringEmerald,
 		"cursor-pointer data-[selected]:cursor-default",
-		"hover:bg-white/10 hover:scale-[1.02] will-change-transform",
+		"hover:bg-white/10 md:hover:scale-[1.02] will-change-transform",
 		"transition-[transform,background-color,opacity,border-color] duration-200 ease-out",
 		"data-[selected]:hover:scale-100",
 	),
@@ -50,8 +50,8 @@ const tabVariants = cva(
 					"data-[selected]:border data-[selected]:border-border data-[selected]:bg-white/5 data-[selected]:text-neutral-200 data-[selected]:hover:bg-white/10",
 			},
 			size: {
-				sm: "h-8 px-2.5 text-xs",
-				md: "h-9 px-3 text-sm",
+				sm: "text-xs md:text-sm",
+				md: "text-sm",
 			},
 		},
 		defaultVariants: {
