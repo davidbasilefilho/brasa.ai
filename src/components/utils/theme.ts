@@ -1,7 +1,3 @@
-/**
- * Shared theme class fragments inspired by src/App.tsx styling.
- * Use these tokens to keep components visually consistent.
- */
 export const tokens = {
 	border: "border border-border",
 	panel: "border border-border bg-panel-bg",

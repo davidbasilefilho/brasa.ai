@@ -9,7 +9,6 @@ const listVariants = cva(
 		"flex flex-wrap items-center",
 		tokens.roundedLg,
 		tokens.transition,
-		// container background integrates with panels
 		"border border-border bg-panel-muted-bg",
 	),
 	{
@@ -25,23 +24,16 @@ const listVariants = cva(
 
 const tabVariants = cva(
 	cn(
-		// Base: segmented control button
 		"inline-flex items-center justify-center font-semibold gap-2",
 		tokens.rounded,
 		"h-9 px-3 text-sm",
-		// integrate with list background: no border by default
 		"bg-transparent",
 		tokens.text.dim,
 		tokens.transition,
 		tokens.focus.ringEmerald,
-		// Interaction
 		"cursor-pointer data-[selected]:cursor-default",
-		// fun hover: slight scale and tint
 		"hover:bg-white/10 hover:scale-[1.02] will-change-transform",
-		// Animated transitions for transform/opacity/background
 		"transition-[transform,background-color,opacity,border-color] duration-200 ease-out",
-		// Selected button: tinted styling handled per-color below
-		// Ensure selected does not scale on hover
 		"data-[selected]:hover:scale-100",
 	),
 	{

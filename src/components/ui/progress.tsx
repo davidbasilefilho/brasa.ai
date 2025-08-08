@@ -3,14 +3,13 @@ import { cn } from "../utils/cn";
 import { type Accent, accents } from "../utils/theme";
 
 export interface ProgressProps extends React.HTMLAttributes<HTMLDivElement> {
-	value?: number; // 0-100
+	value?: number;
 	color?: Accent;
 }
 
 export const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
 	({ className, value = 0, color = "emerald", ...props }, ref) => {
 		const safe = Number.isFinite(value) ? Math.min(100, Math.max(0, value)) : 0;
-		// Choose accent background color for the filled bar
 		const fillClass =
 			color === "emerald"
 				? accents.emerald.bg

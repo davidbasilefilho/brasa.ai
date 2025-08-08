@@ -18,7 +18,7 @@ const buttonVariants = cva(
 				outline: cn(tokens.panelMuted),
 				ghost: "bg-transparent",
 				link: "underline underline-offset-4",
-				tinted: "", // translucent colored background + border + text
+			tinted: "",
 			},
 			color: {
 				emerald: "",
@@ -39,7 +39,6 @@ const buttonVariants = cva(
 			},
 		},
 		compoundVariants: [
-			// Solid by color
 			{
 				variant: "solid",
 				color: "emerald",
@@ -78,7 +77,6 @@ const buttonVariants = cva(
 				className: cn(tokens.panel, tokens.text.dim, "hover:bg-white/10"),
 			},
 
-			// Outline by color
 			{
 				variant: "outline",
 				color: "emerald",
@@ -125,7 +123,6 @@ const buttonVariants = cva(
 				className: cn(tokens.panelMuted, tokens.text.dim, "hover:bg-white/10"),
 			},
 
-			// Ghost by color
 			{
 				variant: "ghost",
 				color: "emerald",
@@ -152,7 +149,6 @@ const buttonVariants = cva(
 				className: cn(tokens.text.dim, "hover:bg-white/10"),
 			},
 
-			// Tinted by color (semi-transparent bg + colored border + colored text)
 			{
 				variant: "tinted",
 				color: "yellow",
@@ -184,7 +180,6 @@ const buttonVariants = cva(
 				),
 			},
 
-			// Link by color
 			{
 				variant: "link",
 				color: "emerald",
@@ -211,7 +206,6 @@ const buttonVariants = cva(
 				className: "text-neutral-300 hover:text-neutral-200",
 			},
 
-			// Destructive modifier (applies a red-ish tone while preserving structure)
 			{
 				destructive: true,
 				className:

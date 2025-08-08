@@ -6,8 +6,8 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"typecheck": "bunx tsc --noEmit -p tsconfig.json",
-		"typecheck:watch": "bunx tsc --noEmit -p tsconfig.json --watch",
+		"typecheck": "tsc --noEmit -p tsconfig.json",
+		"typecheck:watch": "tsc --noEmit -p tsconfig.json --watch",
 		"lint": "biome lint --write --no-errors-on-unmatched",
 		"format": "biome format --write --no-errors-on-unmatched",
 		"preview": "vite preview",

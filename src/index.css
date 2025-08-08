@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap");
+@import "tailwindcss";
 
 /* Tailwind v4 CSS-first theme config */
 /* biome-ignore lint/correctness/noUnknownAtRules: Tailwind v4 CSS @theme directive */
@@ -22,6 +22,8 @@
 	--color-panel-bg: #061826;
 	--color-panel-muted-bg: #051b2b;
 	--color-border: rgba(255, 255, 255, 0.1);
+	--color-panel-hover-bg: #08202f;
+	--color-panel-muted-bg: #041521;
 
 	/* Text */
 	--color-foreground: #e5e7eb; /* neutral-200 */

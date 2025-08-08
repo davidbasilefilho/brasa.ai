@@ -1,6 +1,7 @@
 import { Tooltip as TooltipPrimitive } from "@base-ui-components/react/tooltip";
 import * as React from "react";
 import { cn } from "../utils/cn";
+import { tokens } from "../utils/theme";
 
 export const TooltipProvider = TooltipPrimitive.Provider;
 
@@ -39,3 +40,21 @@ export const TooltipContent = React.forwardRef<
 	);
 });
 TooltipContent.displayName = "TooltipContent";
+
+export const TooltipPanel = React.forwardRef<
+	HTMLDivElement,
+	React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+	<div
+		ref={ref}
+		className={cn(
+			"z-50 overflow-hidden px-3 py-2 text-xs",
+			tokens.panel,
+			tokens.rounded,
+			tokens.text.base,
+			className,
+		)}
+		{...props}
+	/>
+));
+TooltipPanel.displayName = "TooltipPanel";
