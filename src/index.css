@@ -1,33 +1,45 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap");
 
-/* Tailwind v4 theme variables used across UI components */
+/* Tailwind v4 CSS-first theme config */
+/* biome-ignore lint/correctness/noUnknownAtRules: Tailwind v4 CSS @theme directive */
+@theme {
+	/* Radii */
+	--default-font-family: "Geist";
+	--default-mono-font-family: "Geist Mono";
+	--radius-xs: 0.25rem; /* 4px */
+	--radius-sm: 0.375rem; /* 6px */
+	--radius: 0.5rem; /* 8px */
+	--radius-lg: 0.75rem; /* 12px */
+	--radius-xl: 1rem; /* 16px */
+
+	/* Surface & borders */
+	--color-panel-bg: #061826;
+	--color-panel-muted-bg: #051b2b;
+	--color-border: rgba(255, 255, 255, 0.1);
+
+	/* Text */
+	--color-foreground: #e5e7eb; /* neutral-200 */
+	--color-muted: #cbd5e1; /* slate-300 */
+
+	/* Accents */
+	--color-accent-green: #34d399; /* emerald-400 */
+	--color-accent-green-hover: #6ee7b7; /* emerald-300 */
+	--color-accent-blue: #60a5fa; /* blue-400 */
+	--color-accent-blue-hover: #93c5fd; /* blue-300 */
+	--color-accent-yellow: #fde047; /* yellow-300 */
+	--color-accent-yellow-hover: #fde68a; /* yellow-200 */
+	--color-accent-indigo: #a78bfa; /* indigo-400 */
+	--color-accent-indigo-hover: #c4b5fd; /* indigo-300 */
+
+	/* Focus ring color */
+	--color-ring: color-mix(in oklab, var(--color-accent-green) 40%, transparent);
+}
+
+/* Optional: restore v3 button pointer behavior */
 @layer base {
-	:root {
-		/* Radii */
-		--radius: 0.5rem; /* 8px */
-		--radius-lg: 0.75rem; /* 12px */
-		--radius-xl: 1rem; /* 16px */
-
-		/* Surface & borders */
-		--panel-bg: #061826;
-		--panel-muted-bg: #051b2b;
-		--border: rgba(255, 255, 255, 0.1);
-
-		/* Text */
-		--foreground: #e5e7eb; /* neutral-200 */
-		--muted: #cbd5e1; /* slate-300 */
-
-		/* Accents */
-		--accent-green: #34d399; /* emerald-400 */
-		--accent-green-hover: #6ee7b7; /* emerald-300 */
-		--accent-blue: #60a5fa; /* blue-400 */
-		--accent-blue-hover: #93c5fd; /* blue-300 */
-		--accent-yellow: #fde047; /* yellow-300 */
-		--accent-yellow-hover: #fde68a; /* yellow-200 */
-		--accent-indigo: #a78bfa; /* indigo-400 */
-		--accent-indigo-hover: #c4b5fd; /* indigo-300 */
-
-		/* Focus ring color */
-		--ring: color-mix(in oklab, var(--accent-green) 40%, transparent);
+	button:not(:disabled),
+	[role="button"]:not(:disabled) {
+		cursor: pointer;
 	}
 }

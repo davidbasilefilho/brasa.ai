@@ -13,8 +13,8 @@ export const Separator = React.forwardRef<HTMLDivElement, SeparatorProps>(
 				aria-orientation={orientation}
 				className={cn(
 					orientation === "vertical"
-						? "w-px h-full bg-(--border)"
-						: "h-px w-full bg-(--border)",
+						? "w-px h-full bg-border"
+						: "h-px w-full bg-border",
 					className,
 				)}
 				{...props}

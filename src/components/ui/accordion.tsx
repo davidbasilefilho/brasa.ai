@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Accordion } from "@base-ui-components/react/accordion";
+import * as React from "react";
 import { cn } from "../utils/cn";
 import { tokens } from "../utils/theme";
 
@@ -14,7 +14,7 @@ export const AccordionItem = React.forwardRef<
 	return (
 		<Accordion.Item
 			ref={ref}
-			className={cn("rounded-(--radius)", tokens.panel, "p-0", className)}
+			className={cn("rounded-radius", tokens.panel, "p-0", className)}
 			{...props}
 		/>
 	);
@@ -27,7 +27,7 @@ export const AccordionHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={cn("px-3 py-2", "border-b border-(--border)", className)}
+		className={cn("px-3 py-2", "border-b border-border", className)}
 		{...props}
 	/>
 ));
@@ -46,7 +46,7 @@ export const AccordionTrigger = React.forwardRef<
 				"w-full text-left text-sm font-medium",
 				"inline-flex items-center justify-between gap-2",
 				"px-3 py-2",
-				"transition-colors hover:bg-[color-mix(in_oklab,white_10%,var(--panel-bg))]",
+				"transition-colors hover:bg-[color-mix(in_oklab,white_10%,varpanel-bg)]",
 				className,
 			)}
 			{...props}
@@ -64,7 +64,7 @@ export const AccordionContent = React.forwardRef<
 	return (
 		<Accordion.Panel
 			ref={ref}
-			className={cn("px-3 py-3 text-sm text-(--muted)", className)}
+			className={cn("px-3 py-3 text-sm text-muted", className)}
 			{...props}
 		/>
 	);

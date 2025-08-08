@@ -10,7 +10,7 @@ const listVariants = cva(
 		tokens.roundedLg,
 		tokens.transition,
 		// container background integrates with panels
-		"border border-(--border) bg-(--panel-muted-bg)",
+		"border border-border bg-panel-muted-bg",
 	),
 	{
 		variants: {
@@ -55,7 +55,7 @@ const tabVariants = cva(
 				indigo:
 					"data-[selected]:border data-[selected]:border-indigo-400/30 data-[selected]:bg-indigo-400/10 data-[selected]:text-indigo-200 data-[selected]:hover:bg-indigo-400/20",
 				neutral:
-					"data-[selected]:border data-[selected]:border-(--border) data-[selected]:bg-white/5 data-[selected]:text-neutral-200 data-[selected]:hover:bg-white/10",
+					"data-[selected]:border data-[selected]:border-border data-[selected]:bg-white/5 data-[selected]:text-neutral-200 data-[selected]:hover:bg-white/10",
 			},
 			size: {
 				sm: "h-8 px-2.5 text-xs",

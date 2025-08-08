@@ -1,16 +1,16 @@
-import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
 import { cn } from "../utils/cn";
 
 const alertVariants = cva("w-full rounded-md border px-3 py-2 text-sm", {
 	variants: {
 		variant: {
-			default: "border-(--border) bg-(--panel-bg) text-(--foreground)",
+			default: "border-border bg-panel-bg text-foreground",
 			success:
-				"border-[color-mix(in_oklab,var(--accent-green)_30%,transparent)] bg-[color-mix(in_oklab,var(--accent-green)_10%,transparent)] text-[color-mix(in_oklab,var(--accent-green)_70%,white)]",
-			info: "border-[color-mix(in_oklab,var(--accent-blue)_30%,transparent)] bg-[color-mix(in_oklab,var(--accent-blue)_10%,transparent)] text-[color-mix(in_oklab,var(--accent-blue)_70%,white)]",
+				"border-[color-mix(in_oklab,varaccent-green_30%,transparent)] bg-[color-mix(in_oklab,varaccent-green_10%,transparent)] text-[color-mix(in_oklab,varaccent-green_70%,white)]",
+			info: "border-[color-mix(in_oklab,varaccent-blue_30%,transparent)] bg-[color-mix(in_oklab,varaccent-blue_10%,transparent)] text-[color-mix(in_oklab,varaccent-blue_70%,white)]",
 			warning:
-				"border-[color-mix(in_oklab,var(--accent-yellow)_40%,transparent)] bg-[color-mix(in_oklab,var(--accent-yellow)_10%,transparent)] text-[color-mix(in_oklab,var(--accent-yellow)_70%,black)]",
+				"border-[color-mix(in_oklab,varaccent-yellow_40%,transparent)] bg-[color-mix(in_oklab,varaccent-yellow_10%,transparent)] text-[color-mix(in_oklab,varaccent-yellow_70%,black)]",
 			destructive:
 				"border-[color-mix(in_oklab,red_35%,transparent)] bg-[color-mix(in_oklab,red_12%,transparent)] text-[color-mix(in_oklab,red_80%,white)]",
 		},

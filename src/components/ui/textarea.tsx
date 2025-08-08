@@ -1,18 +1,18 @@
-import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
 import { cn } from "../utils/cn";
 import { tokens } from "../utils/theme";
 
 const textareaVariants = cva(
 	cn(
 		"w-full",
-		"bg-(--panel-muted-bg)",
+		"bg-panel-muted-bg",
 		tokens.text.base,
 		tokens.border,
 		tokens.rounded ?? "rounded-md",
 		tokens.transition,
 		tokens.focus.ringEmerald,
-		"placeholder:text-[color-mix(in_oklab,var(--foreground)_45%,var(--panel-bg))]",
+		"placeholder:text-[color-mix(in_oklab,varforeground_45%,varpanel-bg)]",
 		"disabled:opacity-50 disabled:pointer-events-none",
 		"resize-y",
 	),

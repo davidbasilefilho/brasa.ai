@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Menu } from "@base-ui-components/react/menu";
+import * as React from "react";
 import { cn } from "../utils/cn";
 import { tokens } from "../utils/theme";
 
@@ -50,8 +50,8 @@ export const DropdownMenuItem = React.forwardRef<
 			ref={ref}
 			className={cn(
 				"relative flex w-full cursor-default select-none items-center rounded px-2 py-1.5 text-sm outline-none",
-				"text-(--foreground)",
-				"focus:bg-[color-mix(in_oklab,white_10%,var(--panel-bg))] data-[state=checked]:bg-(--accent-green) data-[state=checked]:text-black",
+				"text-foreground",
+				"focus:bg-[color-mix(in_oklab,white_10%,varpanel-bg)] data-[state=checked]:bg-accent-green data-[state=checked]:text-black",
 				"data-[disabled]:opacity-50 data-[disabled]:pointer-events-none",
 				className,
 			)}
@@ -67,7 +67,7 @@ export const DropdownMenuSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={cn("my-1 h-px w-full bg-(--border)", className)}
+		className={cn("my-1 h-px w-full bg-border", className)}
 		{...props}
 	/>
 ));

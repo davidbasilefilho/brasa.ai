@@ -38,24 +38,30 @@ import {
 } from "./components";
 
 function App() {
-	// Dados dos benchmarks (Documento Técnico)
+	// Dados dos benchmarks (AA Index)
+	// Metodologia AA atualizada; novos valores aproximam-se do gráfico de referência.
 	const intelligenceIndex = [
-		{ modelo: "brasa-72b", score: 90 },
-		{ modelo: "brasa-mini-32b", score: 86 },
-		{ modelo: "brasa-nano-8b", score: 78 },
-		{ modelo: "Grok 4", score: 73 },
-		{ modelo: "Gemini 2.5 Pro", score: 70 },
-		{ modelo: "o3", score: 70 },
-		{ modelo: "Qwen3 235B 2507", score: 69 },
-		{ modelo: "DeepSeek R1 0528", score: 68 },
-		{ modelo: "GLM-4.5", score: 66 },
-		{ modelo: "Claude 4 Opus", score: 64 },
+		{ modelo: "GPT-5 (high)", score: 69 },
+		{ modelo: "GPT-5 (medium)", score: 68 },
+		{ modelo: "Grok 4", score: 68 },
+		{ modelo: "Gemini 2.5 Pro", score: 65 },
+		{ modelo: "GPT-5-mini", score: 64 },
+		{ modelo: "Qwen3 235B 2507", score: 64 },
+		{ modelo: "brasa-72b", score: 67 },
+		{ modelo: "brasa-mini-32b", score: 63 },
+		{ modelo: "brasa-nano-8b", score: 58 },
+		{ modelo: "DeepSeek R1 0528", score: 59 },
+		{ modelo: "GLM-4.5", score: 56 },
+		{ modelo: "Claude 4 Opus", score: 55 },
 	];
 
 	const throughputNvidia = [
 		{ modelo: "brasa-nano-8b", tps: 842 },
 		{ modelo: "brasa-mini-32b", tps: 623 },
 		{ modelo: "brasa-72b", tps: 442 },
+		{ modelo: "GPT-5-mini", tps: 151 },
+		{ modelo: "GPT-5 (high)", tps: 126 },
+		{ modelo: "GPT-5 (medium)", tps: 126 },
 		{ modelo: "DeepSeek R1 0528", tps: 268 },
 		{ modelo: "GLM-4.5", tps: 100 },
 		{ modelo: "Qwen3 235B", tps: 74 },
@@ -89,7 +95,8 @@ function App() {
 		if (m.startsWith("brasa")) return "brasa";
 		if (m.includes("grok")) return "grok";
 		if (m.includes("gemini")) return "gemini";
-		if (m === "o3" || m.includes("openai")) return "openai";
+		if (m === "o3" || m.includes("openai") || m.includes("gpt-5"))
+			return "openai";
 		if (m.includes("qwen")) return "qwen";
 		if (m.includes("deepseek")) return "deepseek";
 		if (m.includes("glm")) return "glm";
@@ -129,10 +136,10 @@ function App() {
 		const row = (first.payload ?? {}) as { modelo?: string };
 		const modelo = row?.modelo ?? "";
 		const color = modelo ? brandColor(modelo) : "#34d399";
-		const isScore = name === "IAI";
+		const isScore = name === "AA Index";
 
 		return (
-			<div className="rounded-(--radius) border border-white/10 bg-[#03111c] p-3 shadow-lg min-w-[12rem]">
+			<div className="rounded-radius border border-white/10 bg-[#03111c] p-3 shadow-lg min-w-[12rem]">
 				<div className="flex items-center gap-2 text-[13px] text-neutral-300 mb-2">
 					<span
 						className="inline-block size-2 rounded-full"
@@ -158,16 +165,16 @@ function App() {
 	};
 
 	return (
-		<div className="min-h-dvh bg-(--panel-bg) text-neutral-100">
+		<div className="min-h-dvh bg-panel-bg text-neutral-100">
 			{/* Header */}
-			<header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-[color-mix(in_oklab,var(--panel-bg)_70%,transparent)] border-b border-(--border)">
+			<header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-[color-mix(in_oklab,varpanel-bg_70%,transparent)] border-b border-border">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 					<div className="flex items-center gap-3">
-						<div className="size-8 rounded-(--radius) bg-emerald-500/20 grid place-items-center">
+						<div className="size-8 rounded-radius bg-emerald-500/20 grid place-items-center">
 							<span className="text-emerald-400 font-black">BA</span>
 						</div>
 						<span className="font-semibold tracking-tight">BrasaAI</span>
-						<span className="ml-3 text-xs text-neutral-300/80 border border-white/10 rounded-(--radius) px-1.5 py-0.5">
+						<span className="ml-3 text-xs text-neutral-300/80 border border-white/10 rounded-radius px-1.5 py-0.5">
 							Laboratório Brasileiro de IA
 						</span>
 					</div>
@@ -233,16 +240,16 @@ function App() {
 								</Button>
 							</div>
 							<div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-neutral-300/90">
-								<span className="rounded-(--radius) border border-white/10 bg-white/5 px-2 py-1">
+								<span className="rounded-radius border border-white/10 bg-white/5 px-2 py-1">
 									Agentic by default
 								</span>
-								<span className="rounded-(--radius) border border-white/10 bg-white/5 px-2 py-1">
+								<span className="rounded-radius border border-white/10 bg-white/5 px-2 py-1">
 									Ferramentas MCP
 								</span>
-								<span className="rounded-(--radius) border border-white/10 bg-white/5 px-2 py-1">
+								<span className="rounded-radius border border-white/10 bg-white/5 px-2 py-1">
 									REPL & Terminal
 								</span>
-								<span className="rounded-(--radius) border border-white/10 bg-white/5 px-2 py-1">
+								<span className="rounded-radius border border-white/10 bg-white/5 px-2 py-1">
 									Web crawling
 								</span>
 							</div>
@@ -255,7 +262,7 @@ function App() {
 			{/* Produtos */}
 			<section
 				id="produtos"
-				className="border-t border-(--border) bg-(--panel-muted-bg)"
+				className="border-t border-border bg-panel-muted-bg"
 			>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
 					<div className="flex items-end justify-between gap-4">
@@ -270,7 +277,7 @@ function App() {
 						</div>
 						<a
 							href="#empresas"
-							className="hidden md:inline-flex items-center gap-2 rounded-(--radius) bg-emerald-400/90 px-3 py-2 text-sm font-semibold text-black hover:bg-emerald-300"
+							className="hidden md:inline-flex items-center gap-2 rounded-radius bg-emerald-400/90 px-3 py-2 text-sm font-semibold text-black hover:bg-emerald-300"
 						>
 							Fale com vendas
 						</a>
@@ -293,27 +300,27 @@ function App() {
 							</CardHeader>
 							<CardContent className="mt-auto">
 								<ul className="grid grid-cols-2 gap-2 text-xs text-neutral-300">
-									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-radius border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Monitor className="size-3.5 text-emerald-300/80" />
 										<span>Browser virtual</span>
 									</li>
-									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-radius border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Globe className="size-3.5 text-blue-300/80" />
 										<span>Web crawl API</span>
 									</li>
-									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-radius border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<TerminalIcon className="size-3.5 text-yellow-300/80" />
 										<span>Terminal</span>
 									</li>
-									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-radius border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Code2 className="size-3.5 text-indigo-300/80" />
 										<span>REPL</span>
 									</li>
-									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-radius border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Plug className="size-3.5 text-emerald-300/80" />
 										<span>Ferramentas MCP</span>
 									</li>
-									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-radius border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Wand2 className="size-3.5 text-pink-300/80" />
 										<span>Tool-use avançado</span>
 									</li>
@@ -338,23 +345,23 @@ function App() {
 							</CardHeader>
 							<CardContent className="mt-auto">
 								<ul className="grid grid-cols-2 gap-2 text-xs text-neutral-300">
-									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-radius border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Code2 className="size-3.5 text-blue-300/80" />
 										<span>Codegen agentic</span>
 									</li>
-									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-radius border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Cpu className="size-3.5 text-emerald-300/80" />
 										<span>Integração LSP</span>
 									</li>
-									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-radius border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<TerminalIcon className="size-3.5 text-yellow-300/80" />
 										<span>REPL & Terminal</span>
 									</li>
-									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-radius border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Globe className="size-3.5 text-blue-300/80" />
 										<span>Web crawl API</span>
 									</li>
-									<li className="flex items-center gap-2 rounded-(--radius) border border-white/10 bg-[#061826] px-2.5 py-1.5">
+									<li className="flex items-center gap-2 rounded-radius border border-white/10 bg-[#061826] px-2.5 py-1.5">
 										<Plug className="size-3.5 text-emerald-300/80" />
 										<span>Ferramentas MCP</span>
 									</li>
@@ -365,10 +372,7 @@ function App() {
 				</div>
 			</section>
 			{/* Modelos */}
-			<section
-				id="modelos"
-				className="border-t border-(--border) bg-(--panel-bg)"
-			>
+			<section id="modelos" className="border-t border-border bg-panel-bg">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
 					<div className="flex items-end justify-between gap-4">
 						<div>
@@ -382,13 +386,13 @@ function App() {
 							</p>
 						</div>
 						<div className="hidden md:flex items-center gap-2 text-xs">
-							<span className="rounded-(--radius) border border-emerald-400/30 bg-emerald-400/10 px-2 py-1 text-emerald-200 transition-colors hover:bg-emerald-400/15">
+							<span className="rounded-radius border border-emerald-400/30 bg-emerald-400/10 px-2 py-1 text-emerald-200 transition-colors hover:bg-emerald-400/15">
 								Agentic
 							</span>
-							<span className="rounded-(--radius) border border-blue-400/30 bg-blue-400/10 px-2 py-1 text-blue-200 transition-colors hover:bg-blue-400/15">
+							<span className="rounded-radius border border-blue-400/30 bg-blue-400/10 px-2 py-1 text-blue-200 transition-colors hover:bg-blue-400/15">
 								Ferramentas
 							</span>
-							<span className="rounded-(--radius) border border-yellow-300/30 bg-yellow-300/10 px-2 py-1 text-yellow-100 transition-colors hover:bg-yellow-300/15">
+							<span className="rounded-radius border border-yellow-300/30 bg-yellow-300/10 px-2 py-1 text-yellow-100 transition-colors hover:bg-yellow-300/15">
 								Longo contexto
 							</span>
 						</div>
@@ -459,7 +463,7 @@ function App() {
 			{/* Benchmarks */}
 			<section
 				id="benchmarks"
-				className="border-t border-(--border) bg-(--panel-muted-bg)"
+				className="border-t border-border bg-panel-muted-bg"
 			>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
 					<div className="flex items-end justify-between gap-4">
@@ -474,17 +478,20 @@ function App() {
 						</div>
 						<a
 							href="#metodologia"
-							className="hidden md:inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-neutral-200 hover:bg-white/10"
+							className="hidden md:inline-flex items-center gap-2 rounded border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-neutral-200 hover:bg-white/10"
 						>
 							Metodologia
 						</a>
 					</div>
 
-					<div className="mt-8 rounded-(--radius-xl) border border-white/10 bg-[rgba(255,255,255,0.03)] p-4">
-						<BrasaTabs.Root defaultValue="iai" className="flex flex-col gap-4">
+					<div className="mt-8 rounded-radius-xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-4">
+						<BrasaTabs.Root
+							defaultValue="aa-index"
+							className="flex flex-col gap-4"
+						>
 							<BrasaTabs.List className="inline-flex w-fit">
-								<BrasaTabs.Tab value="iai" color="emerald">
-									IAI Score
+								<BrasaTabs.Tab value="aa-index" color="emerald">
+									AA Index
 								</BrasaTabs.Tab>
 								<BrasaTabs.Tab value="nvidia" color="blue">
 									NVIDIA GPU
@@ -500,7 +507,7 @@ function App() {
 								</BrasaTabs.Tab>
 							</BrasaTabs.List>
 
-							<BrasaTabs.Panel value="iai">
+							<BrasaTabs.Panel value="aa-index">
 								<div className="h-80 md:h-96">
 									<ResponsiveContainer width="100%" height="100%">
 										<BarChart
@@ -525,9 +532,13 @@ function App() {
 												content={<CustomTooltip />}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
-											<Bar dataKey="score" name="IAI" radius={[4, 4, 0, 0]}>
+											<Bar
+												dataKey="score"
+												name="AA Index"
+												radius={[4, 4, 0, 0]}
+											>
 												{intelligenceIndex.map((d, i) => (
-													<Cell key={`iai-${i}`} fill={brandColor(d.modelo)} />
+													<Cell key={`aa-${i}`} fill={brandColor(d.modelo)} />
 												))}
 											</Bar>
 										</BarChart>
@@ -684,10 +695,7 @@ function App() {
 			</section>
 
 			{/* Metodologia */}
-			<section
-				id="metodologia"
-				className="border-t border-(--border) bg-(--panel-bg)"
-			>
+			<section id="metodologia" className="border-t border-border bg-panel-bg">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
 					<h2 className="text-2xl md:text-3xl font-bold tracking-tight">
 						Como chegamos lá
@@ -712,7 +720,7 @@ function App() {
 							<CardHeader>
 								<div className="flex flex-col gap-1.5">
 									<div className="flex items-center gap-3">
-										<div className="grid size-8 place-items-center rounded-md border border-white/10 bg-emerald-400/10">
+										<div className="grid size-8 place-items-center rounded border border-white/10 bg-emerald-400/10">
 											<Layers className="size-4 text-emerald-300" />
 										</div>
 										<CardTitle className="text-base">HRM</CardTitle>
@@ -733,7 +741,7 @@ function App() {
 							<CardHeader>
 								<div className="flex flex-col gap-1.5">
 									<div className="flex items-center gap-3">
-										<div className="grid size-8 place-items-center rounded-md border border-white/10 bg-blue-400/10">
+										<div className="grid size-8 place-items-center rounded border border-white/10 bg-blue-400/10">
 											<Database className="size-4 text-blue-300" />
 										</div>
 										<CardTitle className="text-base">Memória Atlas</CardTitle>
@@ -754,7 +762,7 @@ function App() {
 							<CardHeader>
 								<div className="flex flex-col gap-1.5">
 									<div className="flex items-center gap-3">
-										<div className="grid size-8 place-items-center rounded-md border border-white/10 bg-yellow-300/10">
+										<div className="grid size-8 place-items-center rounded border border-white/10 bg-yellow-300/10">
 											<Merge className="size-4 text-yellow-200" />
 										</div>
 										<CardTitle className="text-base">Early Fusion</CardTitle>
@@ -775,7 +783,7 @@ function App() {
 							<CardHeader>
 								<div className="flex flex-col gap-1.5">
 									<div className="flex items-center gap-3">
-										<div className="grid size-8 place-items-center rounded-md border border-white/10 bg-indigo-400/10">
+										<div className="grid size-8 place-items-center rounded border border-white/10 bg-indigo-400/10">
 											<Rocket className="size-4 text-indigo-300" />
 										</div>
 										<CardTitle className="text-base">
@@ -796,10 +804,10 @@ function App() {
 			{/* Empresas CTA */}
 			<section
 				id="empresas"
-				className="border-t border-(--border) bg-gradient-to-br from-[color-mix(in_oklab,var(--panel-bg)_90%,#0a2233)] via-(--panel-bg) to-[color-mix(in_oklab,var(--panel-bg)_80%,#0b2a3f)]"
+				className="border-t border-border bg-gradient-to-br from-[color-mix(in_oklab,varpanel-bg_90%,#0a2233)] via-panel-bg to-[color-mix(in_oklab,varpanel-bg_80%,#0b2a3f)]"
 			>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-					<div className="rounded-(--radius-xl) border border-white/10 bg-white/5 p-6 md:p-8 grid md:grid-cols-2 gap-6 items-center">
+					<div className="rounded-radius-xl border border-white/10 bg-white/5 p-6 md:p-8 grid md:grid-cols-2 gap-6 items-center">
 						<div>
 							<h3 className="text-2xl font-bold tracking-tight">
 								Parcerias e soluções sob medida
@@ -812,13 +820,13 @@ function App() {
 						<div className="flex flex-wrap gap-3 md:justify-end">
 							<a
 								href="#contato"
-								className="inline-flex items-center gap-2 rounded-(--radius) bg-emerald-400 px-4 py-2.5 text-sm font-semibold text-black hover:bg-emerald-300 transition-colors"
+								className="inline-flex items-center gap-2 rounded-radius bg-emerald-400 px-4 py-2.5 text-sm font-semibold text-black hover:bg-emerald-300 transition-colors"
 							>
 								Fale com vendas
 							</a>
 							<a
 								href="#docs"
-								className="inline-flex items-center gap-2 rounded-(--radius) border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-neutral-200 hover:bg-white/10 transition-colors"
+								className="inline-flex items-center gap-2 rounded-radius border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-neutral-200 hover:bg-white/10 transition-colors"
 							>
 								Ler documentação
 							</a>
@@ -828,7 +836,7 @@ function App() {
 			</section>
 
 			{/* Footer */}
-			<footer className="border-t border-(--border) bg-(--panel-bg)">
+			<footer className="border-t border-border bg-panel-bg">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-sm text-neutral-300 flex flex-col md:flex-row items-center justify-between gap-4">
 					<span>© {new Date().getFullYear()} BrasaAI • Feito no Brasil</span>
 					<div className="flex items-center gap-4">

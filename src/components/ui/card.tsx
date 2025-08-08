@@ -29,7 +29,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
 					muted ? tokens.panelMuted : tokens.panel,
 					tokens.roundedXl,
 					interactive &&
-						"hover:bg-[color-mix(in_oklab,white_10%,var(--panel-bg))] transition-colors",
+						"hover:bg-[color-mix(in_oklab,white_10%,varpanel-bg)] transition-colors",
 					padding,
 					className,
 				)}
@@ -68,7 +68,7 @@ export const CardDescription = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-	<p ref={ref} className={cn("text-sm text-(--muted)", className)} {...props} />
+	<p ref={ref} className={cn("text-sm text-muted", className)} {...props} />
 ));
 CardDescription.displayName = "CardDescription";
 

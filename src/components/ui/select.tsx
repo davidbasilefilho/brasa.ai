@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Select as SelectPrimitive } from "@base-ui-components/react/select";
+import * as React from "react";
 import { cn } from "../utils/cn";
 import { tokens } from "../utils/theme";
 
@@ -22,9 +22,9 @@ export const SelectTrigger = React.forwardRef<
 			className={cn(
 				"inline-flex h-10 w-full items-center justify-between gap-2 px-3 text-sm",
 				tokens.border,
-				"bg-(--panel-muted-bg)",
+				"bg-panel-muted-bg",
 				tokens.text.base,
-				"rounded-(--radius)",
+				"rounded-radius",
 				tokens.transition,
 				tokens.focus.ringEmerald,
 				"disabled:opacity-50 disabled:pointer-events-none",
@@ -83,8 +83,8 @@ export const SelectItem = React.forwardRef<
 			ref={ref}
 			className={cn(
 				"relative flex w-full cursor-default select-none items-center rounded px-2 py-1.5 text-sm outline-none",
-				"text-(--foreground)",
-				"focus:bg-[color-mix(in_oklab,white_10%,var(--panel-bg))] data-[state=checked]:bg-(--accent-green) data-[state=checked]:text-black",
+				"text-foreground",
+				"focus:bg-[color-mix(in_oklab,white_10%,varpanel-bg)] data-[state=checked]:bg-accent-green data-[state=checked]:text-black",
 				className,
 			)}
 			{...props}
@@ -102,7 +102,7 @@ export const SelectSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={cn("my-1 h-px w-full bg-(--border)", className)}
+		className={cn("my-1 h-px w-full bg-border", className)}
 		{...props}
 	/>
 ));

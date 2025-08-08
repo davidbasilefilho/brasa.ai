@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Dialog as DialogPrimitive } from "@base-ui-components/react/dialog";
+import * as React from "react";
 import { cn } from "../utils/cn";
 import { tokens } from "../utils/theme";
 
@@ -52,7 +52,7 @@ export const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<p
 		ref={ref}
-		className={cn("mt-1 text-sm text-(--muted)", className)}
+		className={cn("mt-1 text-sm text-muted", className)}
 		{...props}
 	/>
 ));

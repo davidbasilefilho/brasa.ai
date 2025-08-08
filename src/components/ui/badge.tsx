@@ -1,5 +1,5 @@
-import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
 import { cn } from "../utils/cn";
 import { accents } from "../utils/theme";
 
@@ -32,8 +32,7 @@ const badgeVariants = cva(
 					accents.indigo.mutedBg,
 					accents.indigo.mutedText,
 				),
-				neutral:
-					"border border-(--border) bg-(--panel-muted-bg) text-(--muted)",
+				neutral: "border border-border bg-panel-muted-bg text-muted",
 			},
 			size: {
 				sm: "text-[11px] px-1.5 py-0.5 rounded",

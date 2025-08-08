@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Checkbox as CheckboxPrimitive } from "@base-ui-components/react/checkbox";
+import * as React from "react";
 import { cn } from "../utils/cn";
 import { tokens } from "../utils/theme";
 
@@ -16,10 +16,10 @@ export const Checkbox = React.forwardRef<
 		<CheckboxPrimitive.Root
 			ref={ref}
 			className={cn(
-				"peer inline-flex size-4 items-center justify-center rounded border bg-(--panel-muted-bg) transition-colors",
-				"border-(--border)",
+				"peer inline-flex size-4 items-center justify-center rounded border bg-panel-muted-bg transition-colors",
+				"border-border",
 				tokens.focus.ringEmerald,
-				"data-[state=checked]:bg-(--accent-green) data-[state=checked]:border-[color-mix(in_oklab,var(--accent-green)_40%,transparent)] data-[state=checked]:text-black",
+				"data-[state=checked]:bg-accent-green data-[state=checked]:border-[color-mix(in_oklab,varaccent-green_40%,transparent)] data-[state=checked]:text-black",
 				"disabled:opacity-50 disabled:pointer-events-none",
 				className,
 			)}
