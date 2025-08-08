@@ -1,5 +1,5 @@
 import "./index.css";
-import { BrasaTabs, Card, CardContent, CardDescription, CardHeader, CardTitle, Badge } from "./components";
+import { BrasaTabs, Card, CardContent, CardDescription, CardHeader, CardTitle, Badge, Button } from "./components";
 import { Cpu, Gauge, Layers, Database, Merge, Rocket, Puzzle, Bot, SquareTerminal, Monitor, Globe, Terminal as TerminalIcon, Code2, Plug, Wand2 } from "lucide-react";
 import {
 	XAxis,
@@ -145,24 +145,15 @@ function App() {
 								globalmente.
 							</p>
 							<div className="mt-8 flex flex-wrap gap-3">
-								<a
-									href="#produtos"
-									className="inline-flex items-center gap-2 rounded-md bg-emerald-400 px-4 py-2.5 text-sm font-semibold text-black hover:bg-emerald-300 transition-colors"
-								>
-									Comece agora
-								</a>
-								<a
-									href="#empresas"
-									className="inline-flex items-center gap-2 rounded-md border border-yellow-300/40 bg-yellow-300/10 px-4 py-2.5 text-sm font-semibold text-yellow-200 hover:bg-yellow-300/20 transition-colors"
-								>
-									Soluções para Empresas
-								</a>
-								<a
-									href="#benchmarks"
-									className="inline-flex items-center gap-2 rounded-md border border-blue-300/40 bg-blue-300/10 px-4 py-2.5 text-sm font-semibold text-blue-200 hover:bg-blue-300/20 transition-colors"
-								>
-									Ver Benchmarks
-								</a>
+								<Button asChild color="emerald" size="md" variant="solid">
+									<a href="#produtos">Comece agora</a>
+								</Button>
+								<Button asChild color="yellow" size="md" variant="outline">
+									<a href="#empresas">Soluções para Empresas</a>
+								</Button>
+								<Button asChild color="blue" size="md" variant="outline">
+									<a href="#benchmarks">Ver Benchmarks</a>
+								</Button>
 							</div>
 							<div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-neutral-300/90">
 								<span className="rounded border border-white/10 bg-white/5 px-2 py-1">
@@ -373,8 +364,8 @@ function App() {
 					</div>
 
 					<div className="mt-8 rounded-xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-4">
-						<BrasaTabs.Root defaultValue="iai" className="flex flex-col gap-4">
-							<BrasaTabs.List className="inline-flex">
+						<BrasaTabs.Root defaultValue="iai" className="flex flex-col gap-4 w-fit">
+							<BrasaTabs.List className="inline-flex w-fit">
 								<BrasaTabs.Tab value="iai" color="emerald">IAI Score</BrasaTabs.Tab>
 								<BrasaTabs.Tab value="nvidia" color="blue">NVIDIA GPU</BrasaTabs.Tab>
 								<BrasaTabs.Tab value="tpu" color="yellow">Google TPU</BrasaTabs.Tab>

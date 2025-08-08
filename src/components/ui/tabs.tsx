@@ -2,7 +2,7 @@ import * as React from "react";
 import { Tabs } from "@base-ui-components/react/tabs";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../utils/cn";
-import { accents, type Accent, tokens } from "../utils/theme";
+import { type Accent, tokens } from "../utils/theme";
 
 const listVariants = cva(
 	cn(
@@ -32,25 +32,32 @@ const tabVariants = cva(
 		// integrate with list background: no border by default
 		"bg-transparent",
 		tokens.text.dim,
-	tokens.transition,
+		tokens.transition,
 		tokens.focus.ringEmerald,
 		// Interaction
 	"cursor-pointer data-[selected]:cursor-default",
 	// fun hover: slight scale and tint
-	"hover:bg-white/10 hover:scale-[1.02] will-change-transform",
+		"hover:bg-white/10 hover:scale-[1.02] will-change-transform",
 	// Animated transitions for transform/opacity/background
-	"transition-[transform,background-color,opacity] duration-200 ease-out",
-	// Selected button: elevate slightly and fade-in content
-	"data-[selected]:shadow-sm data-[selected]:scale-100",
+		"transition-[transform,background-color,opacity] duration-200 ease-out",
+		// Selected button: link-like styling
+		"data-[selected]:underline data-[selected]:underline-offset-4",
+		// Selected should not animate hover bg/scale
+		"data-[selected]:hover:bg-transparent data-[selected]:hover:scale-100",
 	),
 	{
 		variants: {
 			color: {
-				emerald: accents.emerald.tabSelected,
-				blue: accents.blue.tabSelected,
-				yellow: accents.yellow.tabSelected,
-				indigo: accents.indigo.tabSelected,
-				neutral: accents.neutral.tabSelected,
+				emerald:
+					"data-[selected]:text-emerald-300 data-[selected]:hover:text-emerald-200",
+				blue:
+					"data-[selected]:text-blue-200 data-[selected]:hover:text-blue-100",
+				yellow:
+					"data-[selected]:text-yellow-200 data-[selected]:hover:text-yellow-100",
+				indigo:
+					"data-[selected]:text-indigo-200 data-[selected]:hover:text-indigo-100",
+				neutral:
+					"data-[selected]:text-neutral-300 data-[selected]:hover:text-neutral-200",
 			},
 			size: {
 				sm: "h-8 px-2.5 text-xs",
