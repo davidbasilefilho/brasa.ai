@@ -167,7 +167,7 @@ function App() {
 	};
 
 	return (
-		<div className={cn("min-h-dvh", tokens.panel, tokens.text.base)}>
+		<div className={cn("min-h-dvh bg-panel-bg", tokens.text.base)}>
 			{/* Header */}
 			<header
 				className={cn(
@@ -252,7 +252,7 @@ function App() {
 								)}
 							>
 								<span
-									className={cn("size-2", tokens.rounded, accents.emerald.bg)}
+									className={cn("size-2", tokens.rounded, "bg-emerald-400")}
 								/>
 								Feito no Brasil • Aberto a parcerias com empresas
 							</div>
@@ -306,8 +306,7 @@ function App() {
 									className={cn(
 										tokens.rounded,
 										tokens.border,
-										accents.neutral.bg,
-										"px-2 py-1",
+										"bg-white/5 px-2 py-1",
 									)}
 								>
 									Agentic by default
@@ -331,7 +330,7 @@ function App() {
 			{/* Produtos */}
 			<section
 				id="produtos"
-				className={cn("border-t", tokens.border, tokens.panelMuted)}
+				className={cn("border-t", tokens.border, "bg-panel-muted-bg")}
 			>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
 					<div className="flex items-end justify-between gap-4">
@@ -358,8 +357,7 @@ function App() {
 					<div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
 						<Card
 							className={cn(
-								"transition duration-150 hover:-translate-y-0.5 flex h-full flex-col gap-4",
-								accents.neutral.bgHover,
+								"transition duration-150 hover:-translate-y-0.5 flex h-full flex-col gap-4 bg-white/5 hover:bg-white/10",
 							)}
 						>
 							<CardHeader>
@@ -388,7 +386,7 @@ function App() {
 											"flex items-center gap-2 px-2.5 py-1.5",
 											tokens.rounded,
 											tokens.border,
-											tokens.panel,
+											"bg-[#061826]",
 										)}
 									>
 										<Monitor className="size-3.5 text-emerald-300/80" />
@@ -420,8 +418,7 @@ function App() {
 
 						<Card
 							className={cn(
-								"transition duration-150 hover:-translate-y-0.5 flex h-full flex-col gap-4",
-								accents.neutral.bgHover,
+								"transition duration-150 hover:-translate-y-0.5 flex h-full flex-col gap-4 bg-white/5 hover:bg-white/10",
 							)}
 						>
 							<CardHeader>
@@ -450,7 +447,7 @@ function App() {
 											"flex items-center gap-2 px-2.5 py-1.5",
 											tokens.rounded,
 											tokens.border,
-											tokens.panel,
+											"bg-[#061826]",
 										)}
 									>
 										<Code2 className="size-3.5 text-blue-300/80" />
@@ -481,7 +478,7 @@ function App() {
 			{/* Modelos */}
 			<section
 				id="modelos"
-				className={cn("border-t", tokens.border, tokens.panel)}
+				className={cn("border-t", tokens.border, "bg-panel-bg")}
 			>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
 					<div className="flex items-end justify-between gap-4">
@@ -553,9 +550,7 @@ function App() {
 							<Card
 								key={m.name}
 								className={cn(
-									"group relative overflow-hidden transition hover:-translate-y-0.5 duration-150",
-									tokens.border,
-									accents.neutral.bg,
+									"group relative overflow-hidden transition hover:-translate-y-0.5 duration-150 border border-border bg-white/5",
 								)}
 								interactive
 							>
@@ -582,10 +577,7 @@ function App() {
 									>
 										<li
 											className={cn(
-												"flex items-center gap-2 px-2.5 py-2",
-												tokens.rounded,
-												tokens.border,
-												tokens.panel,
+												"flex items-center gap-2 px-2.5 py-2 rounded border border-white/10 bg-[#061826]",
 											)}
 										>
 											<Gauge className="size-4 text-emerald-300/80" />
@@ -610,7 +602,7 @@ function App() {
 			{/* Benchmarks */}
 			<section
 				id="benchmarks"
-				className={cn("border-t", tokens.border, tokens.panelMuted)}
+				className={cn("border-t", tokens.border, "bg-panel-muted-bg")}
 			>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
 					<div className="flex items-end justify-between gap-4">
@@ -633,10 +625,7 @@ function App() {
 
 					<div
 						className={cn(
-							"mt-8 p-4",
-							tokens.roundedXl,
-							tokens.border,
-							accents.neutral.bg,
+							"mt-8 p-4 rounded-xl border border-white/10 bg-[rgba(255,255,255,0.03)]",
 						)}
 					>
 						<BrasaTabs.Root
@@ -851,7 +840,7 @@ function App() {
 			{/* Metodologia */}
 			<section
 				id="metodologia"
-				className={cn("border-t", tokens.border, tokens.panel)}
+				className={cn("border-t", tokens.border, "bg-panel-bg")}
 			>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
 					<h2 className="text-2xl md:text-3xl font-bold tracking-tight">
@@ -871,9 +860,7 @@ function App() {
 					<div className="mt-10 grid gap-5 md:grid-cols-4">
 						<Card
 							className={cn(
-								"relative overflow-hidden transition-transform duration-150 hover:-translate-y-0.5",
-								tokens.border,
-								accents.neutral.bg,
+								"relative overflow-hidden transition-transform duration-150 hover:-translate-y-0.5 border border-white/10 bg-white/5",
 							)}
 							interactive
 						>
@@ -1006,7 +993,7 @@ function App() {
 			</section>
 
 			{/* Footer */}
-			<footer className={cn("border-t", tokens.border, tokens.panel)}>
+			<footer className={cn("border-t", tokens.border, "bg-panel-bg")}>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-sm text-neutral-300 flex flex-col md:flex-row items-center justify-between gap-4">
 					<span>© {new Date().getFullYear()} BrasaAI • Feito no Brasil</span>
 					<div className="flex items-center gap-4">
