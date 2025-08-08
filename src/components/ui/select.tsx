@@ -24,7 +24,7 @@ export const SelectTrigger = React.forwardRef<
 				tokens.border,
 				"bg-panel-muted-bg",
 				tokens.text.base,
-				"rounded-radius",
+				"rounded-radius-radius",
 				tokens.transition,
 				tokens.focus.ringEmerald,
 				"disabled:opacity-50 disabled:pointer-events-none",
@@ -54,7 +54,7 @@ export const SelectContent = React.forwardRef<
 				<SelectPrimitive.Popup
 					ref={ref}
 					className={cn(
-						"z-50 min-w-[8rem] overflow-hidden rounded-md",
+						"z-50 min-w-[8rem] overflow-hidden rounded-radius-md",
 						tokens.panel,
 						"p-1 shadow-lg",
 						className,

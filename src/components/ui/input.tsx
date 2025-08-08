@@ -1,5 +1,5 @@
-import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
 import { cn } from "../utils/cn";
 import { tokens } from "../utils/theme";
 
@@ -9,7 +9,7 @@ const inputVariants = cva(
 		"placeholder:text-neutral-400",
 		"focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50",
 		tokens.border,
-		tokens.rounded ?? "rounded-md",
+		tokens.rounded ?? "rounded-radius-md",
 		tokens.focus.ringEmerald,
 		tokens.transition,
 	),

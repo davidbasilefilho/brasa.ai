@@ -22,7 +22,7 @@ export const DropdownMenuContent = React.forwardRef<
 				<Menu.Popup
 					ref={ref}
 					className={cn(
-						"z-50 min-w-[10rem] overflow-hidden rounded-md p-1 shadow-lg",
+						"z-50 min-w-[10rem] overflow-hidden rounded-radius-md p-1 shadow-lg",
 						tokens.panel,
 						className,
 					)}

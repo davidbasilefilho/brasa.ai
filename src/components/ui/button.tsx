@@ -6,7 +6,7 @@ import { type Accent, accents, tokens } from "../utils/theme";
 const buttonVariants = cva(
 	cn(
 		"inline-flex items-center justify-center font-semibold",
-		tokens.rounded ?? "rounded-md",
+		tokens.rounded ?? "rounded-radius-md",
 		tokens.transition,
 		tokens.focus.ringEmerald,
 		"disabled:opacity-50 disabled:pointer-events-none",

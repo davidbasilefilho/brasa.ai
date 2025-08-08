@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Popover as PopoverPrimitive } from "@base-ui-components/react/popover";
+import * as React from "react";
 import { cn } from "../utils/cn";
 import { tokens } from "../utils/theme";
 
@@ -22,7 +22,7 @@ export const PopoverContent = React.forwardRef<
 				<PopoverPrimitive.Popup
 					ref={ref}
 					className={cn(
-						"z-50 w-72 rounded-md p-4 shadow-md outline-none",
+						"z-50 w-72 rounded-radius-md p-4 shadow-md outline-none",
 						tokens.panel,
 						className,
 					)}

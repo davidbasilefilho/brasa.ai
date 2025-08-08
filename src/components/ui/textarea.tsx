@@ -9,7 +9,7 @@ const textareaVariants = cva(
 		"bg-panel-muted-bg",
 		tokens.text.base,
 		tokens.border,
-		tokens.rounded ?? "rounded-md",
+		tokens.rounded ?? "rounded-radius-md",
 		tokens.transition,
 		tokens.focus.ringEmerald,
 		"placeholder:text-[color-mix(in_oklab,varforeground_45%,varpanel-bg)]",

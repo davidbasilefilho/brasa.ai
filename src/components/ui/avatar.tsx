@@ -21,7 +21,7 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
 		ref,
 	) => {
 		const [errored, setErrored] = React.useState(false);
-		const radius = rounded === "full" ? "rounded-full" : "rounded-md";
+		const radius = rounded === "full" ? "rounded-full" : "rounded-radius-md";
 
 		return (
 			<div

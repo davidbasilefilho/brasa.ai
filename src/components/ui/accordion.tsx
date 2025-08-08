@@ -14,7 +14,7 @@ export const AccordionItem = React.forwardRef<
 	return (
 		<Accordion.Item
 			ref={ref}
-			className={cn("rounded-radius", tokens.panel, "p-0", className)}
+			className={cn("rounded-radius-radius", tokens.panel, "p-0", className)}
 			{...props}
 		/>
 	);

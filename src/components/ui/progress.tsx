@@ -26,7 +26,7 @@ export const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
 			<div
 				ref={ref}
 				className={cn(
-					"w-full h-2 rounded-radius bg-white/10 overflow-hidden",
+					"w-full h-2 rounded-radius-radius bg-white/10 overflow-hidden",
 					className,
 				)}
 				role="progressbar"
