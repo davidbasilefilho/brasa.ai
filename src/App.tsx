@@ -178,7 +178,7 @@ function App() {
 						</a>
 					</div>
 					<div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-						<Card className="transition duration-150 hover:-translate-y-0.5 hover:!bg-white/5" interactive>
+						<Card className="transition duration-150 hover:-translate-y-0.5 hover:bg-white/5">
 							<CardHeader>
 								<div>
 									<CardTitle>Brasa Chat</CardTitle>
@@ -200,7 +200,7 @@ function App() {
 							</CardContent>
 						</Card>
 
-						<Card className="transition duration-150 hover:-translate-y-0.5 hover:!bg-white/5" interactive>
+						<Card className="transition duration-150 hover:-translate-y-0.5 hover:bg-white/5">
 							<CardHeader>
 								<div>
 									<CardTitle>Brasa CLI</CardTitle>
