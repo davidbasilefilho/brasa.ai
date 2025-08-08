@@ -32,13 +32,16 @@ const tabVariants = cva(
 		// integrate with list background: no border by default
 		"bg-transparent",
 		tokens.text.dim,
-		tokens.transition,
+	tokens.transition,
 		tokens.focus.ringEmerald,
 		// Interaction
-		"cursor-pointer data-[selected]:cursor-default",
-		"hover:bg-white/10",
-		// Selected button appears solid
-		"data-[selected]:shadow-sm",
+	"cursor-pointer data-[selected]:cursor-default",
+	// fun hover: slight scale and tint
+	"hover:bg-white/10 hover:scale-[1.02] will-change-transform",
+	// Animated transitions for transform/opacity/background
+	"transition-[transform,background-color,opacity] duration-200 ease-out",
+	// Selected button: elevate slightly and fade-in content
+	"data-[selected]:shadow-sm data-[selected]:scale-100",
 	),
 	{
 		variants: {

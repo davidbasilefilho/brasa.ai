@@ -9,7 +9,7 @@ import {
 	ResponsiveContainer,
 	BarChart,
 	Bar,
-	Legend,
+	Cell,
 } from "recharts";
 
 function App() {
@@ -57,6 +57,34 @@ function App() {
 		{ modelo: "brasa-72b", tps: 2599 },
 		{ modelo: "Qwen3 235B", tps: 1357 },
 	];
+
+	// Brand detection and colors for charts
+	const getBrand = (modelo: string) => {
+		const m = modelo.toLowerCase();
+		if (m.startsWith("brasa")) return "brasa";
+		if (m.includes("grok")) return "grok";
+		if (m.includes("gemini")) return "gemini";
+		if (m === "o3" || m.includes("openai")) return "openai";
+		if (m.includes("qwen")) return "qwen";
+		if (m.includes("deepseek")) return "deepseek";
+		if (m.includes("glm")) return "glm";
+		if (m.includes("claude")) return "claude";
+		return "other";
+	};
+
+	const brandColors: Record<string, string> = {
+		brasa: "#34d399", // emerald-400 (project standard)
+		grok: "#a78bfa", // indigo-400
+		gemini: "#fde047", // yellow-300
+		openai: "#60a5fa", // blue-400
+		qwen: "#5eead4", // teal-300
+		deepseek: "#f472b6", // pink-400
+		glm: "#fb923c", // orange-400
+		claude: "#fb7185", // rose-400
+		other: "#94a3b8", // slate-400 fallback
+	};
+
+	const brandColor = (modelo: string) => brandColors[getBrand(modelo)] ?? brandColors.other;
 
 	return (
 		<div className="min-h-dvh bg-(--panel-bg) text-neutral-100">
@@ -346,7 +374,7 @@ function App() {
 
 					<div className="mt-8 rounded-xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-4">
 						<BrasaTabs.Root defaultValue="iai" className="flex flex-col gap-4">
-							<BrasaTabs.List>
+							<BrasaTabs.List className="inline-flex">
 								<BrasaTabs.Tab value="iai" color="emerald">IAI Score</BrasaTabs.Tab>
 								<BrasaTabs.Tab value="nvidia" color="blue">NVIDIA GPU</BrasaTabs.Tab>
 								<BrasaTabs.Tab value="tpu" color="yellow">Google TPU</BrasaTabs.Tab>
@@ -385,13 +413,11 @@ function App() {
 												}}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
-											<Legend />
-											<Bar
-												dataKey="score"
-												name="IAI"
-												fill="#34d399"
-												radius={[4, 4, 0, 0]}
-											/>
+											<Bar dataKey="score" name="IAI" radius={[4, 4, 0, 0]}>
+												{intelligenceIndex.map((d, i) => (
+													<Cell key={`iai-${i}`} fill={brandColor(d.modelo)} />
+												))}
+											</Bar>
 										</BarChart>
 									</ResponsiveContainer>
 								</div>
@@ -425,12 +451,11 @@ function App() {
 												}}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
-											<Bar
-												dataKey="tps"
-												name="Tokens/seg"
-												fill="#60a5fa"
-												radius={[4, 4, 0, 0]}
-											/>
+											<Bar dataKey="tps" name="Tokens/seg" radius={[4, 4, 0, 0]}>
+												{throughputNvidia.map((d, i) => (
+													<Cell key={`nv-${i}`} fill={brandColor(d.modelo)} />
+												))}
+											</Bar>
 										</BarChart>
 									</ResponsiveContainer>
 								</div>
@@ -464,12 +489,11 @@ function App() {
 												}}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
-											<Bar
-												dataKey="tps"
-												name="Tokens/seg"
-												fill="#fde047"
-												radius={[4, 4, 0, 0]}
-											/>
+											<Bar dataKey="tps" name="Tokens/seg" radius={[4, 4, 0, 0]}>
+												{throughputTPU.map((d, i) => (
+													<Cell key={`tpu-${i}`} fill={brandColor(d.modelo)} />
+												))}
+											</Bar>
 										</BarChart>
 									</ResponsiveContainer>
 								</div>
@@ -503,12 +527,11 @@ function App() {
 												}}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
-											<Bar
-												dataKey="tps"
-												name="Tokens/seg"
-												fill="#a78bfa"
-												radius={[4, 4, 0, 0]}
-											/>
+											<Bar dataKey="tps" name="Tokens/seg" radius={[4, 4, 0, 0]}>
+												{throughputGroq.map((d, i) => (
+													<Cell key={`groq-${i}`} fill={brandColor(d.modelo)} />
+												))}
+											</Bar>
 										</BarChart>
 									</ResponsiveContainer>
 								</div>
@@ -542,12 +565,11 @@ function App() {
 												}}
 												cursor={{ fill: "rgba(3, 17, 28, 0.45)" }}
 											/>
-											<Bar
-												dataKey="tps"
-												name="Tokens/seg"
-												fill="#34d399"
-												radius={[4, 4, 0, 0]}
-											/>
+											<Bar dataKey="tps" name="Tokens/seg" radius={[4, 4, 0, 0]}>
+												{throughputCerebras.map((d, i) => (
+													<Cell key={`cer-${i}`} fill={brandColor(d.modelo)} />
+												))}
+											</Bar>
 										</BarChart>
 									</ResponsiveContainer>
 								</div>
