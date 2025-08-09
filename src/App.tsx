@@ -97,7 +97,6 @@ function App() {
 			label: ReactNode;
 			iconColorClass: string;
 		}[];
-		cardColorClass: string;
 	}[] = [
 		{
 			title: (
@@ -141,7 +140,6 @@ function App() {
 					iconColorClass: "text-pink-300/80",
 				},
 			],
-			cardColorClass: "bg-panel-bg hover:bg-panel-hover-bg",
 		},
 		{
 			title: (
@@ -185,7 +183,6 @@ function App() {
 					iconColorClass: "text-emerald-300/80",
 				},
 			],
-			cardColorClass: "bg-panel-bg hover:bg-panel-hover-bg",
 		},
 	];
 
@@ -572,8 +569,7 @@ function App() {
 							<Card
 								key={idx}
 								className={cn(
-									"transition duration-150 hover:-translate-y-0.5 flex h-full flex-col gap-4",
-									p.cardColorClass,
+									"transition duration-150 hover:-translate-y-1 flex h-full flex-col gap-4 bg-panel-bg",
 								)}
 							>
 								<CardHeader>
@@ -630,7 +626,7 @@ function App() {
 							<Card
 								key={m.name}
 								className={cn(
-									"group relative overflow-hidden transition hover:-translate-y-0.5 duration-150 border border-border bg-panel-hover-bg",
+									"group relative overflow-hidden transition hover:-translate-y-1 duration-150 border border-border bg-panel-hover-bg",
 								)}
 								interactive
 							>
@@ -712,7 +708,7 @@ function App() {
 							defaultValue="aa-index"
 							className="flex flex-col gap-4"
 						>
-							<BrasaTabs.List className="w-fit">
+							<BrasaTabs.List>
 								{[
 									{
 										value: "aa-index",
@@ -1042,7 +1038,7 @@ function App() {
 							<Card
 								key={s.key}
 								className={cn(
-									"relative overflow-hidden transition-transform duration-150 hover:-translate-y-0.5 border border-border bg-panel-muted-bg",
+									"relative overflow-hidden transition-transform duration-150 hover:-translate-y-1 border border-border bg-panel-muted-bg",
 								)}
 								interactive
 							>

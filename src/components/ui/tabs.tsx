@@ -6,7 +6,7 @@ import { type Accent, tokens } from "../utils/theme";
 
 const listVariants = cva(
 	cn(
-		"flex w-full flex-wrap items-center justify-center md:justify-start",
+		"flex w-full flex-wrap items-center justify-center md:justify-start w-fit",
 		tokens.roundedLg,
 		tokens.transition,
 		"border border-border bg-panel-muted-bg",
@@ -15,7 +15,7 @@ const listVariants = cva(
 		variants: {
 			size: {
 				sm: "gap-x-1.5 gap-y-1.5 px-1.5 py-2.5 md:px-2 md:py-2",
-				md: "gap-x-4 gap-y-1.5 px-1.5 py-2.5 md:px-2 md:py-2",
+				md: "gap-x-6 gap-y-1.5 px-1.5 py-2.5 md:px-2 md:py-2",
 			},
 		},
 		defaultVariants: { size: "md" },
