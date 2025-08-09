@@ -42,6 +42,12 @@ import { accents, tokens } from "./components/utils/theme";
 import { type ReactNode } from "react";
 
 function App() {
+	// Consistent layout helpers
+	const container = cn("mx-auto max-w-7xl px-4 sm:px-6 lg:px-8");
+	const sectionY = "py-16 md:py-24";
+	const sectionTitle = "text-2xl md:text-3xl font-bold tracking-tight";
+	const sectionDesc = cn("mt-2", tokens.text.muted);
+
 	const headerNav: { label: ReactNode; href: string }[] = [
 		{ label: <>Produtos</>, href: "#produtos" },
 		{ label: <>Modelos</>, href: "#modelos" },
@@ -423,7 +429,8 @@ function App() {
 			>
 				<div
 					className={cn(
-						"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between",
+						container,
+						"h-14 md:h-16 flex items-center justify-between",
 					)}
 				>
 					<div className="flex items-center gap-3">
@@ -448,7 +455,7 @@ function App() {
 							Laboratório Brasileiro de IA
 						</span>
 					</div>
-					<nav className={cn("hidden md:flex items-center gap-2")}>
+					<nav className={cn("hidden md:flex items-center gap-1.5")}>
 						{headerNav.map((item) => (
 							<Button
 								key={String(item.href)}
@@ -466,11 +473,10 @@ function App() {
 
 			<section className="relative overflow-hidden">
 				<div className="pointer-events-none absolute inset-0">
-					<div className="absolute inset-0 bg-[radial-gradient(60%_40%_at_50%_-10%,rgba(16,185,129,0.18),transparent_60%)]" />
-					<div className="absolute -top-24 -left-24 h-[38rem] w-[38rem] rounded-full bg-[conic-gradient(from_90deg_at_50%_50%,rgba(250,204,21,0.14),transparent_40%)] blur-2xl" />
-					<div className="absolute -bottom-24 -right-24 h-[40rem] w-[40rem] rounded-full bg-[conic-gradient(from_220deg_at_50%_50%,rgba(59,130,246,0.18),transparent_45%)] blur-2xl" />
+					<div className="absolute inset-0 bg-[radial-gradient(70%_50%_at_50%_-10%,rgba(16,185,129,0.12),transparent_65%)]" />
+					<div className="absolute -bottom-24 -right-24 h-[40rem] w-[40rem] rounded-full bg-[conic-gradient(from_220deg_at_50%_50%,rgba(59,130,246,0.12),transparent_55%)] blur-2xl" />
 				</div>
-				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+				<div className={cn(container, "py-16 md:py-24")}>
 					<div className="grid gap-10">
 						<div>
 							<div className="inline-flex items-center gap-2">
@@ -504,7 +510,7 @@ function App() {
 							</h1>
 							<p
 								className={cn(
-									"mt-6 text-base leading-relaxed md:text-lg",
+									"mt-4 md:mt-6 text-base leading-relaxed md:text-lg",
 									tokens.text.muted,
 								)}
 							>
@@ -513,7 +519,7 @@ function App() {
 								ferramentas, com alto throughput e desempenho competitivo
 								globalmente.
 							</p>
-							<div className="mt-8 flex flex-wrap gap-3">
+							<div className="mt-6 md:mt-8 flex flex-wrap gap-2.5 md:gap-3">
 								{heroCtas.map((cta, idx) => (
 									<Button
 										key={idx}
@@ -526,7 +532,7 @@ function App() {
 									</Button>
 								))}
 							</div>
-							<div className="mt-6 flex flex-wrap items-center gap-2">
+							<div className="mt-4 md:mt-6 flex flex-wrap items-center gap-2">
 								{heroBadges.map((b, idx) => (
 									<Badge key={idx} color="neutral">
 										{b.label}
@@ -542,13 +548,11 @@ function App() {
 				id="produtos"
 				className={cn("border-t", tokens.border, "bg-panel-muted-bg")}
 			>
-				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+				<div className={cn(container, sectionY)}>
 					<div className="flex items-end justify-between gap-4">
 						<div>
-							<h2 className="text-2xl md:text-3xl font-bold tracking-tight">
-								Produtos
-							</h2>
-							<p className="mt-2 text-neutral-300 max-w-2xl">
+							<h2 className={sectionTitle}>Produtos</h2>
+							<p className={sectionDesc}>
 								Para desenvolvedores e empresas: ferramentas agenticas, prontas
 								para produção.
 							</p>
@@ -563,7 +567,7 @@ function App() {
 							<a href="#empresas">Fale com vendas</a>
 						</Button>
 					</div>
-					<div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch">
+					<div className="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 items-stretch">
 						{products.map((p, idx) => (
 							<Card
 								key={idx}
@@ -582,7 +586,7 @@ function App() {
 									<Badge color={p.badge.color}>{p.badge.label}</Badge>
 								</CardHeader>
 								<CardContent className="mt-auto">
-									<div className="grid grid-cols-2 gap-2 text-xs">
+									<div className="grid grid-cols-2 gap-2.5 text-xs">
 										{p.features.map((f, i) => (
 											<Badge
 												key={i}
@@ -604,13 +608,11 @@ function App() {
 				id="modelos"
 				className={cn("border-t", tokens.border, "bg-panel-bg")}
 			>
-				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+				<div className={cn(container, sectionY)}>
 					<div className="flex items-end justify-between gap-4">
 						<div>
-							<h2 className="text-2xl md:text-3xl font-bold tracking-tight">
-								Modelos
-							</h2>
-							<p className="mt-2 text-neutral-300 max-w-3xl">
+							<h2 className={sectionTitle}>Modelos</h2>
+							<p className={cn("mt-2 max-w-3xl", tokens.text.muted)}>
 								Famílias de modelos otimizados para agentes, raciocínio e
 								tool-use. Suporte a quantizações e execução eficiente em
 								múltiplos hardwares (CPU, GPU, Mobile e Edge).
@@ -623,7 +625,7 @@ function App() {
 						</div>
 					</div>
 
-					<div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+					<div className="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 						{models.map((m) => (
 							<Card
 								key={m.name}
@@ -681,13 +683,11 @@ function App() {
 				id="benchmarks"
 				className={cn("border-t", tokens.border, "bg-panel-muted-bg")}
 			>
-				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+				<div className={cn(container, sectionY)}>
 					<div className="flex items-end justify-between gap-4">
 						<div>
-							<h2 className="text-2xl md:text-3xl font-bold tracking-tight">
-								Benchmarks
-							</h2>
-							<p className="mt-2 text-neutral-300 max-w-3xl">
+							<h2 className={sectionTitle}>Benchmarks</h2>
+							<p className={cn("mt-2 max-w-3xl", tokens.text.muted)}>
 								Comparação na Artificial Analysis Intelligence Index e métricas
 								de throughput/output speed em diferentes hardwares.
 							</p>
@@ -705,14 +705,14 @@ function App() {
 
 					<div
 						className={cn(
-							"mt-8 p-4 rounded-xl border border-white/10 bg-panel-bg",
+							"mt-8 p-4 md:p-5 rounded-xl border border-white/10 bg-panel-bg",
 						)}
 					>
 						<BrasaTabs.Root
 							defaultValue="aa-index"
 							className="flex flex-col gap-4"
 						>
-							<BrasaTabs.List>
+							<BrasaTabs.List className="w-fit">
 								{[
 									{
 										value: "aa-index",
@@ -751,7 +751,7 @@ function App() {
 									<ResponsiveContainer width="100%" height="100%">
 										<BarChart
 											data={intelligenceIndexSorted}
-											margin={{ top: 8, right: 16, left: 8, bottom: 48 }}
+											margin={{ top: 8, right: 16, left: 8, bottom: 44 }}
 										>
 											<CartesianGrid strokeDasharray="3 3" stroke="#133042" />
 											<XAxis
@@ -763,13 +763,13 @@ function App() {
 													/>
 												)}
 												interval={0}
-												tickMargin={14}
-												height={48}
+												tickMargin={12}
+												height={44}
 											/>
 											<YAxis
 												tick={{ fill: "#cbd5e1", fontSize: 12 }}
 												domain={[40, 100]}
-												width={40}
+												width={44}
 											/>
 											<Tooltip
 												content={<ChartTooltip />}
@@ -797,7 +797,7 @@ function App() {
 									<ResponsiveContainer width="100%" height="100%">
 										<BarChart
 											data={throughputNvidiaSorted}
-											margin={{ top: 8, right: 16, left: 8, bottom: 40 }}
+											margin={{ top: 8, right: 16, left: 8, bottom: 44 }}
 										>
 											<CartesianGrid strokeDasharray="3 3" stroke="#133042" />
 											<XAxis
@@ -806,12 +806,12 @@ function App() {
 													<ModelTick {...props} data={throughputNvidiaSorted} />
 												)}
 												interval={0}
-												tickMargin={14}
+												tickMargin={12}
 												height={44}
 											/>
 											<YAxis
 												tick={{ fill: "#cbd5e1", fontSize: 12 }}
-												width={40}
+												width={44}
 											/>
 											<Tooltip
 												content={<ChartTooltip />}
@@ -839,7 +839,7 @@ function App() {
 									<ResponsiveContainer width="100%" height="100%">
 										<BarChart
 											data={throughputTPUSorted}
-											margin={{ top: 8, right: 16, left: 8, bottom: 40 }}
+											margin={{ top: 8, right: 16, left: 8, bottom: 44 }}
 										>
 											<CartesianGrid strokeDasharray="3 3" stroke="#133042" />
 											<XAxis
@@ -848,12 +848,12 @@ function App() {
 													<ModelTick {...props} data={throughputTPUSorted} />
 												)}
 												interval={0}
-												tickMargin={14}
+												tickMargin={12}
 												height={44}
 											/>
 											<YAxis
 												tick={{ fill: "#cbd5e1", fontSize: 12 }}
-												width={40}
+												width={44}
 											/>
 											<Tooltip
 												content={<ChartTooltip />}
@@ -881,7 +881,7 @@ function App() {
 									<ResponsiveContainer width="100%" height="100%">
 										<BarChart
 											data={throughputGroqSorted}
-											margin={{ top: 8, right: 16, left: 8, bottom: 40 }}
+											margin={{ top: 8, right: 16, left: 8, bottom: 44 }}
 										>
 											<CartesianGrid strokeDasharray="3 3" stroke="#133042" />
 											<XAxis
@@ -890,12 +890,12 @@ function App() {
 													<ModelTick {...props} data={throughputGroqSorted} />
 												)}
 												interval={0}
-												tickMargin={14}
+												tickMargin={12}
 												height={44}
 											/>
 											<YAxis
 												tick={{ fill: "#cbd5e1", fontSize: 12 }}
-												width={40}
+												width={44}
 											/>
 											<Tooltip
 												content={<ChartTooltip />}
@@ -923,7 +923,7 @@ function App() {
 									<ResponsiveContainer width="100%" height="100%">
 										<BarChart
 											data={throughputCerebrasSorted}
-											margin={{ top: 8, right: 16, left: 8, bottom: 40 }}
+											margin={{ top: 8, right: 16, left: 8, bottom: 44 }}
 										>
 											<CartesianGrid strokeDasharray="3 3" stroke="#133042" />
 											<XAxis
@@ -935,12 +935,12 @@ function App() {
 													/>
 												)}
 												interval={0}
-												tickMargin={14}
+												tickMargin={12}
 												height={44}
 											/>
 											<YAxis
 												tick={{ fill: "#cbd5e1", fontSize: 12 }}
-												width={40}
+												width={44}
 											/>
 											<Tooltip
 												content={<ChartTooltip />}
@@ -971,11 +971,9 @@ function App() {
 				id="metodologia"
 				className={cn("border-t", tokens.border, "bg-panel-bg")}
 			>
-				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-					<h2 className="text-2xl md:text-3xl font-bold tracking-tight">
-						Como chegamos lá
-					</h2>
-					<p className="mt-4 text-neutral-300 max-w-4xl">
+				<div className={cn(container, sectionY)}>
+					<h2 className={sectionTitle}>Como chegamos lá</h2>
+					<p className={cn("mt-3 md:mt-4 max-w-4xl", tokens.text.muted)}>
 						A sinergia vem de quatro pilares integrados do documento técnico:
 						HRM (planejamento no h-module e execução no l-module), memória ATLAS
 						(curto, longo prazo e persistente para contexto &gt;10M tokens),
@@ -985,7 +983,7 @@ function App() {
 						GSPO), elevando o raciocínio sem depender de dados humanos.
 					</p>
 
-					<div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+					<div className="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 						{[
 							{
 								key: "hrm",
@@ -1081,10 +1079,10 @@ function App() {
 			<section
 				id="empresas"
 				className={cn(
-					"border-t border-border bg-gradient-to-br from-[color-mix(in_oklab,var(--color-panel-bg)_90%,#0a2233)] via-[color-panel-bg] to-[color-mix(in_oklab,var(--color-panel-bg)_80%,#0b2a3f)]",
+					"border-t border-border bg-gradient-to-br from-[color-mix(in_oklab,var(--color-panel-bg)_92%,#0a2233)] via-[color-panel-bg] to-[color-mix(in_oklab,var(--color-panel-bg)_86%,#0b2a3f)]",
 				)}
 			>
-				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+				<div className={cn(container, "py-14 md:py-20")}>
 					<div
 						className={cn(
 							"p-6 md:p-8 grid md:grid-cols-2 gap-6 items-center",
@@ -1097,12 +1095,12 @@ function App() {
 							<h3 className="text-2xl font-bold tracking-tight">
 								Parcerias e soluções sob medida
 							</h3>
-							<p className="mt-2 text-neutral-300">
+							<p className={cn("mt-2", tokens.text.muted)}>
 								Integre agentes ao seu produto. Oferecemos POCs rápidas, SLAs e
 								suporte dedicado.
 							</p>
 						</div>
-						<div className="flex flex-wrap gap-3 md:justify-end">
+						<div className="flex flex-wrap gap-2.5 md:gap-3 md:justify-end">
 							{[
 								{
 									href: "#contato",
@@ -1133,7 +1131,12 @@ function App() {
 			</section>
 
 			<footer className={cn("border-t", tokens.border, "bg-panel-bg")}>
-				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-sm text-neutral-300 flex flex-col md:flex-row items-center justify-between gap-4">
+				<div
+					className={cn(
+						container,
+						"py-8 md:py-10 text-sm text-neutral-300 flex flex-col md:flex-row items-center justify-between gap-4",
+					)}
+				>
 					<span>© {new Date().getFullYear()} BrasaAI • Feito no Brasil</span>
 					<div className="flex items-center gap-2">
 						{[
